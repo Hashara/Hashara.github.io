@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8010af53-f30a-4067-8c0c-857c42b89d63" name="Default Changelist" comment="extra added">
+    <list default="true" id="8010af53-f30a-4067-8c0c-857c42b89d63" name="Default Changelist" comment="changed image position">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +46,7 @@
       <updated>1624808408605</updated>
       <workItem from="1624808410472" duration="546000" />
       <workItem from="1624808986082" duration="1017000" />
-      <workItem from="1624843591082" duration="31711000" />
+      <workItem from="1624843591082" duration="32894000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1624867181560</created>
@@ -112,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624895594136</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="changed image position">
+      <created>1624896320002</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1624896320002</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +144,7 @@
     <MESSAGE value="projects pages added" />
     <MESSAGE value="experiences added" />
     <MESSAGE value="extra added" />
-    <option name="LAST_COMMIT_MESSAGE" value="extra added" />
+    <MESSAGE value="changed image position" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed image position" />
   </component>
 </project>
