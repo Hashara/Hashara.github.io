@@ -22,10 +22,12 @@
     font-size: 11px;
 }
 
-.full-width{
-    width: 100%;
-    padding: 0 ;
-    border-top: solid 1px rgba(255, 255, 255, 0.15);
-    border-top: solid 1px rgba(255, 255, 255, 0.15);
-    position: relative;
+
+.padded{
+    padding: 3.5em 3em 1em 7em ;
 }
+
+.green-background{
+    background-color: #2d936c;
+}
+
