@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8010af53-f30a-4067-8c0c-857c42b89d63" name="Default Changelist" comment="changed image position">
+    <list default="true" id="8010af53-f30a-4067-8c0c-857c42b89d63" name="Default Changelist" comment="footer removed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
@@ -46,7 +46,7 @@
       <updated>1624808408605</updated>
       <workItem from="1624808410472" duration="546000" />
       <workItem from="1624808986082" duration="1017000" />
-      <workItem from="1624843591082" duration="32894000" />
+      <workItem from="1624843591082" duration="34816000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1624867181560</created>
@@ -118,7 +118,21 @@
       <option name="project" value="LOCAL" />
       <updated>1624896320002</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="skills added">
+      <created>1624897349501</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1624897349501</updated>
+    </task>
+    <task id="LOCAL-00012" summary="footer removed">
+      <created>1624897595850</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1624897595850</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +159,8 @@
     <MESSAGE value="experiences added" />
     <MESSAGE value="extra added" />
     <MESSAGE value="changed image position" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed image position" />
+    <MESSAGE value="skills added" />
+    <MESSAGE value="footer removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="footer removed" />
   </component>
 </project>
