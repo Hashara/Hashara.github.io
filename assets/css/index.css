@@ -89,9 +89,9 @@
     .hide-mobile {
         clear: both;
         display: block;
-        float: left;
-        margin: 10px auto 5px 20px;
-        width: 28%;
+        float: none;
+        margin:auto;
+        width: 100%;
     }
 }
 
@@ -107,5 +107,10 @@
         margin: 10px auto 5px 20px;
         width: 28%;
     }
+}
+
+.space-mobile{
+    width: 95%;
+    margin-left: 2%;
 }
 
