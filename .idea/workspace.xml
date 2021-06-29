@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8010af53-f30a-4067-8c0c-857c42b89d63" name="Default Changelist" comment="responsive project cards">
+    <list default="true" id="8010af53-f30a-4067-8c0c-857c42b89d63" name="Default Changelist" comment="hide icons in mobile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +48,7 @@
       <workItem from="1624808410472" duration="546000" />
       <workItem from="1624808986082" duration="1017000" />
       <workItem from="1624843591082" duration="34858000" />
-      <workItem from="1624930800270" duration="4179000" />
+      <workItem from="1624930800270" duration="5530000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1624867181560</created>
@@ -146,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624933721461</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="hide icons in mobile">
+      <created>1624951648524</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1624951648524</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,6 +185,8 @@
     <MESSAGE value="skills added" />
     <MESSAGE value="footer removed" />
     <MESSAGE value="responsive project cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="responsive project cards" />
+    <MESSAGE value="hide incons in mobile" />
+    <MESSAGE value="hide icons in mobile" />
+    <option name="LAST_COMMIT_MESSAGE" value="hide icons in mobile" />
   </component>
 </project>
