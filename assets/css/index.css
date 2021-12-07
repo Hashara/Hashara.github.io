@@ -213,3 +213,8 @@
 .purple-tag {
     background: #7c16bc;
 }
+
+.image-responsive {
+    width: 80%;
+    height: auto;
+}
