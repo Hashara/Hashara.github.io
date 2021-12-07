@@ -12,15 +12,15 @@
 
 .video-responsive{
     overflow:hidden;
-    padding-bottom:56.25%;
+    padding-bottom:50%;
     position:relative;
     height:0;
 }
 .video-responsive iframe{
     left:0;
     top:0;
-    height:100%;
-    width:100%;
+    height:75%;
+    width:75%;
     position:absolute;
 }
 .content {
@@ -114,3 +114,102 @@
     margin-left: 2%;
 }
 
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 15px;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+    padding: 5px 16px;
+    background-color: #444160;
+    color: white;
+}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 16px;
+    background-color: #444160;
+    color: white;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #5052b5;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.tags {
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.tags li {
+    float: left;
+}
+
+.tag {
+
+    border-radius: 3px;
+    border-style: ridge;
+    border-width: 1px;
+    color: white;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 20px 0 23px;
+    position: relative;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    -webkit-transition: color 0.2s;
+
+}
+
+.blue-tag{
+    background: #1666bc;
+}
+
+.purple-tag {
+    background: #7c16bc;
+}

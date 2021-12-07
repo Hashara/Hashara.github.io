@@ -188,3 +188,79 @@
 			});
 
 })(jQuery);
+
+const pumpItUpModal = document.getElementById("pumpItUp");
+const fypModal = document.getElementById("fyp");
+const dsModal = document.getElementById("ds");
+const ncmsModal = document.getElementById("ncms");
+const obbsModal = document.getElementById("obbs");
+
+
+// Get the button that opens the modal
+const pumpItUpBtn = document.getElementById("pumpItUpBtn");
+const fypBtn = document.getElementById("fypBtn");
+const dsBtn = document.getElementById("dsBtn");
+const ncmsBtn = document.getElementById("ncmsBtn");
+const obbsBtn = document.getElementById("obbsBtn");
+
+// Get the <span> element that closes the modal
+const pumpItUpSpan = document.getElementsByClassName("close")[0];
+const fypSpan = document.getElementsByClassName("close")[1];
+const dsSpan = document.getElementsByClassName("close")[2];
+const ncmsSpan = document.getElementsByClassName("close")[3];
+const obbsSpan = document.getElementsByClassName("close")[4];
+
+// When the user clicks on the button, open the modal
+pumpItUpBtn.onclick = function() {
+	pumpItUpModal.style.display = "block";
+}
+fypBtn.onclick = function() {
+	fypModal.style.display = "block";
+}
+dsBtn.onclick = function() {
+	dsModal.style.display = "block";
+}
+ncmsBtn.onclick = function() {
+	ncmsModal.style.display = "block";
+}
+obbsBtn.onclick = function() {
+	obbsModal.style.display = "block";
+}
+
+
+// When the user clicks on <span> (x), close the modal
+pumpItUpSpan.onclick = function() {
+	pumpItUpModal.style.display = "none";
+}
+fypSpan.onclick = function() {
+	fypModal.style.display = "none";
+}
+dsSpan.onclick = function() {
+	dsModal.style.display = "none";
+}
+ncmsSpan.onclick = function() {
+	ncmsModal.style.display = "none";
+}
+obbsSpan.onclick = function() {
+	obbsModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+	if (event.target === pumpItUpModal) {
+		pumpItUpModal.style.display = "none";
+	}
+	else if (event.target === fypModal) {
+		fypModal.style.display = "none";
+	}
+	else if (event.target === dsModal) {
+		dsModal.style.display = "none";
+	}
+	else if (event.target === ncmsModal) {
+		ncmsModal.style.display = "none";
+	}
+	else if (event.target === obbsModal) {
+		obbsModal.style.display = "none";
+	}
+}
+
