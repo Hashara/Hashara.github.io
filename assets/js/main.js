@@ -189,33 +189,33 @@
 
 })(jQuery);
 
-class TrustedFunction {
-	static policy = trustedTypes.createPolicy('TrustedFunctionWorkaround', {
-		createScript: (_, ...args) => {
-			args.forEach( (arg) => {
-				if (!trustedTypes.isScript(arg)) {
-					throw new Error("TrustedScripts only, please");
-				}
-			});
-
-			// NOTE: This is insecure without parsing the arguments and body,
-			// Malicious inputs  can escape the function body and execute immediately!
-
-			const fnArgs = args.slice(0, -1).join(',');
-			const fnBody = args.pop().toString();
-			const body = `(function anonymous(
-       ${fnArgs}
-       ) {
-       ${fnBody}
-       })`;
-			return body;
-		}
-	});
-
-	constructor(...args) {
-		return (window || self).eval(TrustedFunction.policy.createScript('', ...args));
-	}
-}
+// class TrustedFunction {
+// 	static policy = trustedTypes.createPolicy('TrustedFunctionWorkaround', {
+// 		createScript: (_, ...args) => {
+// 			args.forEach( (arg) => {
+// 				if (!trustedTypes.isScript(arg)) {
+// 					throw new Error("TrustedScripts only, please");
+// 				}
+// 			});
+//
+// 			// NOTE: This is insecure without parsing the arguments and body,
+// 			// Malicious inputs  can escape the function body and execute immediately!
+//
+// 			const fnArgs = args.slice(0, -1).join(',');
+// 			const fnBody = args.pop().toString();
+// 			const body = `(function anonymous(
+//        ${fnArgs}
+//        ) {
+//        ${fnBody}
+//        })`;
+// 			return body;
+// 		}
+// 	});
+//
+// 	constructor(...args) {
+// 		return (window || self).eval(TrustedFunction.policy.createScript('', ...args));
+// 	}
+// }
 
 const pumpItUpModal = document.getElementById("pumpItUp");
 const fypModal = document.getElementById("fyp");
