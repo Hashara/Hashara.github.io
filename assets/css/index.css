@@ -214,6 +214,19 @@
     background: #7c16bc;
 }
 
+.transparent-tag {
+    /*background: #5519a9;*/
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    border-style: revert;
+    border-width: 1px;
+    border-color: #492c62;
+    color: #ffffff;
+
+
+}
+
 .image-responsive {
     width: 80%;
     height: auto;
