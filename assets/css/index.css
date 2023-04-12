@@ -251,5 +251,12 @@
     height: auto;
 }
 
+#google-scholar-svg {
+    opacity: 0.5;
+}
+
+#google-scholar-svg :hover {
+    opacity: 1;
+}
 
 
