@@ -121,6 +121,13 @@ if (dialogs.size) {
 
 		dialog.showModal();
 
+		// `autofocus` is not honoured when showModal() runs during initial module
+		// execution, which is exactly the deep-link path (/#p-fyp, and every one
+		// of the eight redirect stubs). Without this, focus lands on the dialog
+		// itself — which deliberately has no focus ring — so a keyboard user
+		// sees no indicator anywhere on the page.
+		dialog.querySelector(".dialog-close")?.focus();
+
 		if (push) {
 			history.pushState({ dialog: id }, "", `#${id}`);
 			pushedFor = id;
@@ -137,8 +144,20 @@ if (dialogs.size) {
 
 		// Backdrop click — the dialog element itself only receives the event
 		// when the click lands outside .dialog-inner.
+		//
+		// A `click` target is the common ancestor of mousedown and mouseup, so
+		// drag-selecting text and releasing past the dialog edge would otherwise
+		// register as a backdrop click and close it, discarding the selection.
+		// Require the press to have STARTED on the backdrop too.
+		let pressedBackdrop = false;
+
+		dialog.addEventListener("mousedown", (event) => {
+			pressedBackdrop = event.target === dialog;
+		});
+
 		dialog.addEventListener("click", (event) => {
-			if (event.target === dialog) dialog.close();
+			if (event.target === dialog && pressedBackdrop) dialog.close();
+			pressedBackdrop = false;
 		});
 
 		// Covers the close button, Esc and backdrop in one place.
