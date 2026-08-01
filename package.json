@@ -1,22 +1,20 @@
 {
-  "name": "portfolio",
+  "name": "hashara-github-io",
   "version": "1.0.0",
-  "description": "Hyperspace by HTML5 UP\r html5up.net | @ajlkn\r Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)",
-  "main": "index.js",
+  "description": "Personal academic site for Hashara Kumarasinghe. Static, no build step.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hashara/my-portfolio.git"
+    "url": "git+https://github.com/Hashara/Hashara.github.io.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Hashara/my-portfolio/issues"
   },
-  "homepage": "https://github.com/Hashara/my-portfolio#readme",
+  "homepage": "https://hashara.github.io/",
   "dependencies": {
     "lite-server": "^2.6.1"
   }

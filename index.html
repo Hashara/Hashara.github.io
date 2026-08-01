@@ -1,1474 +1,778 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Hashara Kumarasinghe</title>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link href="assets/css/main.css" rel="stylesheet"/>
-    <noscript>
-        <link href="assets/css/noscript.css" rel="stylesheet"/>
-    </noscript>
-    <link href="assets/css/fontawesome-all.min.css" rel="stylesheet">
-    <link href="assets/css/index.css" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<title>Hashara Kumarasinghe — PhD Candidate, Phylogenetics &amp; HPC, ANU</title>
+<meta name="description" content="Hashara Kumarasinghe is a PhD candidate at the Australian National University working at the intersection of bioinformatics, machine learning and high-performance computing, applying ML and HPC to phylogenetic tree inference.">
+<meta name="author" content="Hashara Kumarasinghe">
+<link rel="canonical" href="https://hashara.github.io/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://hashara.github.io/">
+<meta property="og:title" content="Hashara Kumarasinghe — PhD Candidate, Phylogenetics &amp; HPC, ANU">
+<meta property="og:description" content="PhD candidate at the Australian National University working at the intersection of bioinformatics, machine learning and high-performance computing.">
+<meta property="og:image" content="https://hashara.github.io/images/portrait@2x.webp">
+<meta property="og:image:alt" content="Portrait of Hashara Kumarasinghe">
+<meta property="profile:first_name" content="Hashara">
+<meta property="profile:last_name" content="Kumarasinghe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hashara Kumarasinghe — PhD Candidate, Phylogenetics &amp; HPC, ANU">
+<meta name="twitter:description" content="PhD candidate at the Australian National University working at the intersection of bioinformatics, machine learning and high-performance computing.">
+<meta name="twitter:image" content="https://hashara.github.io/images/portrait@2x.webp">
+
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+<link rel="preload" href="assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<script src="assets/js/site.js" type="module"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://hashara.github.io/#hashara",
+  "name": "Hashara Kumarasinghe",
+  "alternateName": "K. A. S. H. Kumarasinghe",
+  "url": "https://hashara.github.io/",
+  "image": "https://hashara.github.io/images/portrait@2x.webp",
+  "jobTitle": "PhD Candidate",
+  "description": "PhD candidate at the Australian National University integrating bioinformatics, machine learning and high-performance computing, applying ML and HPC techniques to phylogenetic tree inference.",
+  "knowsAbout": ["Phylogenetics", "Bioinformatics", "Machine Learning", "High-Performance Computing", "CUDA", "OpenACC", "Cloud Infrastructure"],
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "The Australian National University",
+    "url": "https://www.anu.edu.au/"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Moratuwa",
+    "url": "https://uom.lk/"
+  },
+  "worksFor": {
+    "@type": "Organization",
+    "name": "The Australian National University"
+  },
+  "sameAs": [
+    "https://scholar.google.com/citations?user=EtRv_0sAAAAJ",
+    "https://github.com/Hashara",
+    "https://www.linkedin.com/in/hashara/",
+    "https://publons.com/wos-op/review/author/BErAAEU8/"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ScholarlyArticle",
+      "headline": "Chest X-ray analysis empowered with deep learning: A systematic review",
+      "author": [{"@type": "Person", "name": "D. Meedeniya"}, {"@id": "https://hashara.github.io/#hashara"}, {"@type": "Person", "name": "S. Kolonne"}, {"@type": "Person", "name": "C. Fernando"}, {"@type": "Person", "name": "I. Díez"}, {"@type": "Person", "name": "G. Marques"}],
+      "isPartOf": {"@type": "Periodical", "name": "Applied Soft Computing"},
+      "datePublished": "2022",
+      "sameAs": "https://doi.org/10.1016/j.asoc.2022.109319"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "headline": "U-Net Based Chest X-ray Segmentation with Ensemble Classification for Covid-19 and Pneumonia",
+      "author": [{"@id": "https://hashara.github.io/#hashara"}, {"@type": "Person", "name": "S. L. Kolonne"}, {"@type": "Person", "name": "K. C. M. Fernando"}, {"@type": "Person", "name": "D. Meedeniya"}],
+      "isPartOf": {"@type": "Periodical", "name": "International Journal of Online and Biomedical Engineering (iJOE)"},
+      "datePublished": "2022",
+      "sameAs": "https://doi.org/10.3991/ijoe.v18i07.30807"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "headline": "Chest Radiographs Classification Using Multi-model Deep Learning: A Comparative Study",
+      "author": [{"@type": "Person", "name": "C. Fernando"}, {"@type": "Person", "name": "S. Kolonne"}, {"@id": "https://hashara.github.io/#hashara"}, {"@type": "Person", "name": "D. Meedeniya"}],
+      "isPartOf": {"@type": "Periodical", "name": "2022 2nd International Conference on Advanced Research in Computing (ICARC)"},
+      "datePublished": "2022",
+      "sameAs": "https://doi.org/10.1109/ICARC54489.2022.9753811"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "headline": "MobileNetV2 Based Chest X-Rays Classification",
+      "author": [{"@type": "Person", "name": "S. Kolonne"}, {"@type": "Person", "name": "C. Fernando"}, {"@id": "https://hashara.github.io/#hashara"}, {"@type": "Person", "name": "D. Meedeniya"}],
+      "isPartOf": {"@type": "Periodical", "name": "2021 International Conference on Decision Aid Sciences and Application (DASA)"},
+      "datePublished": "2021",
+      "sameAs": "https://doi.org/10.1109/DASA53625.2021.9682248"
+    }
+  ]
+}
+</script>
 </head>
+
 <body>
 
-<!-- Sidebar -->
-<section id="sidebar">
-    <div class="inner">
-        <nav>
-            <ul>
-                <li><a href="#intro">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#extracurricular">Extracurricular</a></li>
-            </ul>
-        </nav>
-    </div>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ======================================================== Masthead -->
+<header class="masthead" id="masthead">
+	<div class="shell">
+		<a class="wordmark" href="#top">Hashara Kumarasinghe</a>
+		<nav class="nav" aria-label="Sections">
+			<ul>
+				<li><a href="#about">About</a></li>
+				<li><a href="#research">Research</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#experience">Experience</a></li>
+				<li><a href="#education">Education</a></li>
+				<li><a href="#skills">Skills</a></li>
+				<li><a href="#activities">Awards</a></li>
+			</ul>
+		</nav>
+		<button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch colour theme">
+			<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.2v2.1M12 19.7v2.1M4.4 4.4l1.5 1.5M18.1 18.1l1.5 1.5M2.2 12h2.1M19.7 12h2.1M4.4 19.6l1.5-1.5M18.1 5.9l1.5-1.5"/></svg>
+			<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 13.3A8.6 8.6 0 1 1 10.7 3.2a6.7 6.7 0 0 0 10.1 10.1z"/></svg>
+		</button>
+	</div>
+</header>
+
+<main id="main">
+
+<!-- ======================================================== Hero -->
+<section class="hero" id="about">
+	<div class="shell">
+		<div class="hero-grid">
+			<div>
+				<h1 id="top">Hashara Kumarasinghe</h1>
+				<p class="role"><strong>PhD Candidate</strong> · School of Computing, ANU College of Systems &amp; Society · The Australian National University</p>
+
+				<p class="lede">I work at the intersection of bioinformatics, machine learning and high-performance computing — applying ML and HPC techniques to phylogenetic tree inference.</p>
+
+				<div class="prose">
+					<p>Previously I was a software engineer at Sysco LABS, specialising in cloud technologies and infrastructure management, working extensively with AWS, Terraform, Progress Chef and Jenkins. I contributed to the AIX-to-AWS cloud migration project, migrating over 100 systems and primarily handling infrastructure configuration.</p>
+					<p>I hold a bachelor's degree in Computer Science and Engineering from the University of Moratuwa. My academic background gave me a strong foundation in computer science and engineering, and my professional experience has honed my skills in cloud infrastructure and automation.</p>
+				</div>
+
+				<ul class="channels">
+					<li>
+						<a class="primary" href="assets/cv/hashara-kumarasinghe-cv.pdf" target="_blank" rel="noopener">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5v11.5"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M4.5 20h15"/></svg>
+							Curriculum vitae
+						</a>
+					</li>
+					<li>
+						<a href="https://scholar.google.com/citations?user=EtRv_0sAAAAJ" target="_blank" rel="me noopener">
+							<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5s-5.548 1.749-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+							Google Scholar
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/Hashara" target="_blank" rel="me noopener">
+							<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+							GitHub
+						</a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/in/hashara/" target="_blank" rel="me noopener">
+							<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.86-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+							LinkedIn
+						</a>
+					</li>
+					<li>
+						<a href="mailto:kumarasinghe.k.a.s.h@gmail.com">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7.5 9 5.5 9-5.5"/></svg>
+							Email
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<img class="portrait" src="images/portrait.webp"
+			     srcset="images/portrait.webp 512w, images/portrait@2x.webp 1024w"
+			     sizes="(min-width: 48rem) 9.5rem, 7rem"
+			     width="512" height="512" fetchpriority="high" decoding="async"
+			     alt="Hashara Kumarasinghe">
+		</div>
+	</div>
 </section>
 
-<!-- Wrapper -->
-<div id="wrapper">
-
-    <!-- Intro -->
-    <section class="wrapper style1 fullscreen spotlights" id="intro">
-        <div class="inner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-4">
-                        <img alt="Hashara Kumarasinghe" class="round-img" src="images/Hashara%20kumarasinghe.jpg">
-                    </div>
-                    <div class="col-3">
-                        <br/>
-                        <h1>Hashara Kumarasinghe</h1>
-                        <br/>
-
-                    </div>
-                    <div class="col-1">
-                        <br/>
-                        <div class="show-mobile">
-
-                        <span class="space"><a href="./assets/cv/Hashara Kumarasinghe.pdf" target="_blank"><i
-                                class="fa fa-download fa-3x"></i></a></span>
-
-                        </div>
-                    </div>
-                    <div class="col-2 hide-mobile">
-                        <br/>
-
-                        <ul class="actions ">
-                            <li><a class="button primary"
-                                   href="./assets/cv/Hashara Kumarasinghe.pdf"
-                                   target="_blank"
-                            >Download Resume
-                                <i class="fas fa-download fa-2x"></i>
-                            </a>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-
-                <p>
-			I am currently a PhD candidate at the Australian National University, Engineering and Computer Science, focusing on the integration of bioinformatics,
-			machine learning, and high-performance computing. My research involves applying machine learning and high-performance techniques to phylogenetic tree
-			inference in the bioinformatics domain. Previously, I worked at SyscoLABs as a software engineer, where I specialized
-			in cloud technologies and infrastructure management. During my tenure, I worked extensively with AWS, Terraform, Progress Chef,
-			and Jenkins. I contributed significantly to the AIX to AWS cloud migration project, successfully migrating over 100 systems 
-			and primarily handling infrastructure configuration efforts. </br> 
-			I hold a bachelor's degree from the University of Moratuwa in Computer Science and Engineering.
-		    My academic background has provided me with a strong foundation in computer science and engineering,
-		    and my professional experience has honed my skills in cloud infrastructure and automation.
-                </p>
-                <div class="hide-mobile">
-                    <div class="content">
-                <span class="space"><a href="https://www.linkedin.com/in/hashara/" target="_blank"><i
-                        class="fab fa-linkedin fa-5x"></i></a></span>
-                        <span class="space"><a href="https://github.com/Hashara" target="_blank"><i
-                                class="fab fa-github  fa-5x"></i></a></span>
-                        <span class="space"><a href="mailto:kumarasinghe.k.a.s.h@gmail.com" target="_blank"><i
-                                class="fas fa-envelope fa-5x"></i></a></span>
-                        <span class="space"><a href="https://scholar.google.com/citations?user=EtRv_0sAAAAJ"
-                                               target="_blank"><i
-                                class="fab fa-5x">
-
-                            <svg id="google-scholar-svg" style="color:white" xmlns="http://www.w3.org/2000/svg"
-                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="100"
-                                 zoomAndPan="magnify" viewBox="0 0 30 30.000001" height="100"
-                                 preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath
-                                    id="id1"><path
-                                    d="M 3.386719 3 L 27.339844 3 L 27.339844 28 L 3.386719 28 Z M 3.386719 3 "
-                                    clip-rule="nonzero"
-                                    fill="white"></path></clipPath></defs><g clip-path="url(#id1)"><path fill="white"
-                                                                                                         d="M 14.660156 3.25 L 3.386719 10.308594 L 11.125 10.308594 C 11.097656 10.417969 11.050781 10.515625 11.027344 10.625 C 10.960938 10.964844 10.910156 11.34375 10.910156 11.734375 C 10.910156 16.773438 16.054688 16.207031 16.054688 16.207031 L 16.054688 17.492188 C 16.054688 18.011719 16.734375 17.832031 16.816406 18.890625 C 16.476562 18.890625 9.691406 18.695312 9.691406 23.277344 C 9.691406 27.882812 15.679688 27.65625 15.679688 27.65625 C 15.679688 27.65625 22.59375 27.964844 22.59375 22.273438 C 22.597656 18.871094 18.636719 17.765625 18.636719 16.398438 C 18.636719 15.015625 21.621094 14.609375 21.621094 11.375 C 21.621094 9.960938 21.523438 8.953125 20.890625 8.238281 C 20.84375 8.1875 20.808594 8.152344 20.761719 8.121094 C 20.75 8.109375 20.738281 8.101562 20.726562 8.09375 L 20.898438 8.09375 L 23.816406 5.902344 L 23.816406 8.898438 C 23.816406 8.953125 23.820312 9.007812 23.832031 9.0625 C 23.609375 9.1875 23.429688 9.363281 23.300781 9.585938 C 23.171875 9.808594 23.109375 10.050781 23.113281 10.308594 L 23.113281 11.722656 C 23.109375 11.910156 23.144531 12.09375 23.214844 12.269531 C 23.285156 12.445312 23.386719 12.597656 23.515625 12.734375 C 23.648438 12.867188 23.804688 12.972656 23.976562 13.042969 C 24.152344 13.117188 24.332031 13.152344 24.519531 13.152344 C 24.710938 13.152344 24.890625 13.117188 25.066406 13.042969 C 25.238281 12.972656 25.390625 12.867188 25.523438 12.734375 C 25.65625 12.597656 25.757812 12.445312 25.828125 12.269531 C 25.898438 12.09375 25.933594 11.910156 25.929688 11.722656 L 25.929688 10.308594 C 25.933594 10.050781 25.871094 9.808594 25.742188 9.585938 C 25.613281 9.363281 25.433594 9.1875 25.207031 9.0625 C 25.21875 9.007812 25.226562 8.953125 25.226562 8.898438 L 25.226562 4.839844 L 27.339844 3.25 Z M 15.632812 7.5625 C 16.039062 7.542969 16.445312 7.640625 16.835938 7.863281 C 17.125 8.007812 17.402344 8.21875 17.644531 8.480469 C 18.148438 8.984375 18.570312 9.714844 18.796875 10.578125 C 19.332031 12.625 18.636719 14.597656 17.191406 14.96875 C 15.765625 15.375 14.171875 14.039062 13.621094 12.007812 C 13.378906 11.015625 13.410156 10.054688 13.6875 9.292969 C 13.691406 9.28125 13.695312 9.273438 13.699219 9.265625 C 13.703125 9.261719 13.710938 9.257812 13.714844 9.253906 C 13.792969 8.953125 13.921875 8.679688 14.082031 8.457031 C 14.371094 8.035156 14.753906 7.746094 15.226562 7.617188 C 15.363281 7.585938 15.496094 7.566406 15.632812 7.5625 Z M 16.183594 19.75 C 18.566406 19.570312 20.597656 20.886719 20.746094 22.675781 C 20.84375 24.449219 19.007812 26.027344 16.605469 26.1875 C 14.222656 26.351562 12.160156 25.050781 12.046875 23.277344 C 11.933594 21.492188 13.78125 19.929688 16.183594 19.75 Z M 16.183594 19.75 "
-                                                                                                         fill-opacity="1"
-                                                                                                         fill-rule="nonzero"></path></g></svg>
-                        </i></a></span>
-                    </div>
-                </div>
-                <div class="show-mobile">
-                    <div class="content">
-                <span><a href="https://www.linkedin.com/in/hashara/" target="_blank"><i
-                        class="fab fa-linkedin fa-5x"></i></a></span>
-                        <span><a href="https://github.com/Hashara" target="_blank"><i
-                                class="fab fa-github fa-5x"></i></a></span>
-                        <span><a href="mailto:kumarasinghe.k.a.s.h@gmail.com" target="_blank"><i
-                                class="fas fa-envelope fa-5x"></i></a></span>
-                        <span><a href="https://scholar.google.com/citations?user=EtRv_0sAAAAJ" target="_blank"><i
-                                class="fas fa-5x">
-                            <svg id="google-scholar-svg" style="color: white" xmlns="http://www.w3.org/2000/svg"
-                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="100"
-                                 zoomAndPan="magnify" viewBox="0 0 30 30.000001" height="100"
-                                 preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath
-                                    id="id1"><path
-                                    d="M 3.386719 3 L 27.339844 3 L 27.339844 28 L 3.386719 28 Z M 3.386719 3 "
-                                    clip-rule="nonzero"
-                                    fill="rgba(255, 255, 255, 0.55)"></path></clipPath></defs><g clip-path="url(#id1)"><path
-                                    fill="white"
-                                    d="M 14.660156 3.25 L 3.386719 10.308594 L 11.125 10.308594 C 11.097656 10.417969 11.050781 10.515625 11.027344 10.625 C 10.960938 10.964844 10.910156 11.34375 10.910156 11.734375 C 10.910156 16.773438 16.054688 16.207031 16.054688 16.207031 L 16.054688 17.492188 C 16.054688 18.011719 16.734375 17.832031 16.816406 18.890625 C 16.476562 18.890625 9.691406 18.695312 9.691406 23.277344 C 9.691406 27.882812 15.679688 27.65625 15.679688 27.65625 C 15.679688 27.65625 22.59375 27.964844 22.59375 22.273438 C 22.597656 18.871094 18.636719 17.765625 18.636719 16.398438 C 18.636719 15.015625 21.621094 14.609375 21.621094 11.375 C 21.621094 9.960938 21.523438 8.953125 20.890625 8.238281 C 20.84375 8.1875 20.808594 8.152344 20.761719 8.121094 C 20.75 8.109375 20.738281 8.101562 20.726562 8.09375 L 20.898438 8.09375 L 23.816406 5.902344 L 23.816406 8.898438 C 23.816406 8.953125 23.820312 9.007812 23.832031 9.0625 C 23.609375 9.1875 23.429688 9.363281 23.300781 9.585938 C 23.171875 9.808594 23.109375 10.050781 23.113281 10.308594 L 23.113281 11.722656 C 23.109375 11.910156 23.144531 12.09375 23.214844 12.269531 C 23.285156 12.445312 23.386719 12.597656 23.515625 12.734375 C 23.648438 12.867188 23.804688 12.972656 23.976562 13.042969 C 24.152344 13.117188 24.332031 13.152344 24.519531 13.152344 C 24.710938 13.152344 24.890625 13.117188 25.066406 13.042969 C 25.238281 12.972656 25.390625 12.867188 25.523438 12.734375 C 25.65625 12.597656 25.757812 12.445312 25.828125 12.269531 C 25.898438 12.09375 25.933594 11.910156 25.929688 11.722656 L 25.929688 10.308594 C 25.933594 10.050781 25.871094 9.808594 25.742188 9.585938 C 25.613281 9.363281 25.433594 9.1875 25.207031 9.0625 C 25.21875 9.007812 25.226562 8.953125 25.226562 8.898438 L 25.226562 4.839844 L 27.339844 3.25 Z M 15.632812 7.5625 C 16.039062 7.542969 16.445312 7.640625 16.835938 7.863281 C 17.125 8.007812 17.402344 8.21875 17.644531 8.480469 C 18.148438 8.984375 18.570312 9.714844 18.796875 10.578125 C 19.332031 12.625 18.636719 14.597656 17.191406 14.96875 C 15.765625 15.375 14.171875 14.039062 13.621094 12.007812 C 13.378906 11.015625 13.410156 10.054688 13.6875 9.292969 C 13.691406 9.28125 13.695312 9.273438 13.699219 9.265625 C 13.703125 9.261719 13.710938 9.257812 13.714844 9.253906 C 13.792969 8.953125 13.921875 8.679688 14.082031 8.457031 C 14.371094 8.035156 14.753906 7.746094 15.226562 7.617188 C 15.363281 7.585938 15.496094 7.566406 15.632812 7.5625 Z M 16.183594 19.75 C 18.566406 19.570312 20.597656 20.886719 20.746094 22.675781 C 20.84375 24.449219 19.007812 26.027344 16.605469 26.1875 C 14.222656 26.351562 12.160156 25.050781 12.046875 23.277344 C 11.933594 21.492188 13.78125 19.929688 16.183594 19.75 Z M 16.183594 19.75 "
-                                    fill-opacity="1"
-                                    fill-rule="nonzero"></path></g></svg>
-                        </i></a></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="wrapper style2 fade-up fullscreen" id="skills">
-        <div class="inner">
-            <h2>Skills</h2>
-
-            <ul>
-                <li>
-                    <h3>Technical Fields</h3>
-
-                    <ul class="tags">
-                        <li class="tag transparent-tag">Machine Learning</li>
-                        <li class="tag transparent-tag">Computer Vision</li>
-                        <li class="tag transparent-tag">Web Development</li>
-                        <li class="tag transparent-tag">Mobile Development</li>
-                        <li class="tag transparent-tag">Distributed System</li>
-                        <li class="tag transparent-tag">Object-Oriented Programming</li>
-                        <li class="tag transparent-tag">Parallel Programming</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3>Programming Languages</h3>
-
-                    <ul class="tags">
-                        <li class="tag transparent-tag">Java</li>
-                        <li class="tag transparent-tag">Python</li>
-                        <li class="tag transparent-tag">JavaScript</li>
-                        <li class="tag transparent-tag">PHP</li>
-                        <li class="tag transparent-tag">C++</li>
-                        <li class="tag transparent-tag">PL/SQL</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3>Web Development</h3>
-
-                    <ul class="tags">
-                        <li class="tag transparent-tag">NodeJs</li>
-                        <li class="tag transparent-tag">Spring Boot</li>
-                        <li class="tag transparent-tag">ReactJs</li>
-                        <li class="tag transparent-tag">Angular</li>
-                        <li class="tag transparent-tag">WordPress</li>
-                        <li class="tag transparent-tag">Oracle APEX</li>
-                        <li class="tag transparent-tag">PHP</li>
-                        <li class="tag transparent-tag">JavaScript</li>
-                        <li class="tag transparent-tag">BootStrap</li>
-                        <li class="tag transparent-tag">HTML</li>
-
-                    </ul>
-                </li>
-                <li>
-                    <h3>Database</h3>
-
-                    <ul class="tags">
-                        <li class="tag transparent-tag">MySQL</li>
-                        <li class="tag transparent-tag">PostgreSQL</li>
-                        <li class="tag transparent-tag">Firebase</li>
-                        <li class="tag transparent-tag">MongoDB</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3>Cloud</h3>
-
-                    <ul class="tags">
-                        <li class="tag transparent-tag">Google Cloud Platform</li>
-                        <li class="tag transparent-tag">Microsoft Azure</li>
-                        <li class="tag transparent-tag">AWS</li>
-
-                    </ul>
-                </li>
-                <li>
-                    <h3>DevOps</h3>
-
-                    <ul class="tags">
-                        <li class="tag transparent-tag">Progress Chef</li>
-                        <li class="tag transparent-tag">Terraform</li>
-                        <li class="tag transparent-tag">Jenkins</li>
-
-                    </ul>
-                </li>
-                <li>
-                    <h3>Parallel and Distributed Computing</h3>
-                    <ul class="tags">
-                        <li class="tag transparent-tag">CUDA</li>
-                        <li class="tag transparent-tag">OpenMP</li>
-                        <li class="tag transparent-tag">MPI</li>
-                        <li class="tag transparent-tag">OpenACC</li>
-                    </ul>
-                </li>
-                <li>
-                    <h3>Other</h3>
-
-                    <ul class="tags">
-                        <li class="tag transparent-tag">Git</li>
-                        <li class="tag transparent-tag">Linux</li>
-                        <li class="tag transparent-tag">Bash</li>
-                    </ul>
-            </ul>
-
-
-        </div>
-
-    </section>
-
-    <section class="wrapper style1 fade-up" id="education">
-        <div class="inner">
-            <h2>Education</h2>
-
-            <div class="features">
-                <div class="inner small-padding">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-3 hide-mobile">
-                                <img alt="ANU logo" class="education-image"
-                                     src="images/anu_logo.png">
-                            </div>
-                            <div class="col-9 col-12-small">
-                                <h3>Doctor of Philosophy</h3>
-                                <p> School of Computing <br/>
-                                    ANU College of Systems & Society<br/>
-                                    The Australian National University
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 hide-mobile">
-                                <img alt="University logo" class="education-image"
-                                     src="images/University_of_Moratuwa_logo.png">
-                            </div>
-                            <div class="col-9 col-12-small">
-                                <h3>BSc Eng Hons</h3>
-                                <p>Department of Computer Science and Engineering,<br/>
-                                    University Of Moratuwa(Aug 2017 - 2022) <br/>
-                                    GPA: 3.70/4.20 <br/>
-                                    First Class honors, Included in Dean’s List for 1, 6, 7, 8 semesters
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 hide-mobile">
-                                <img alt="sparkx logo" class="education-image"
-                                     src="images/sparkx.png">
-                            </div>
-                            <div class="col-9 col-12-small">
-                                <h3>SparkX Professional Development Program</h3>
-                                <p>
-                                    <a href="https://www.spark.lk/our-programmes/spark-x.html"
-                                       target="_blank"
-                                    >SparkX Academy, Sri Lanka</a><br/>
-                                    (Mar 2021 – Sep 2021)
-
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 hide-mobile">
-                                <img alt="school logo" class="education-image"
-                                     src="images/devi%20logo.png">
-                            </div>
-                            <div class="col-9 col-12-small">
-                                <h3>GCE Advanced Level</h3>
-                                <p>
-                                    Devi Balika Vidyalaya, Colombo 08 <br/>
-                                    (Aug 2014 - Aug 2016) <br/>
-                                    AAA | Island Rank - 158
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <h3>NVIDIA</h3>
-            <div class="features">
-                <section>
-                    <span class="icon solid major fa-book"></span>
-                    <h3>Fundamentals of Accelerated Computing with OpenACC</h3>
-                    <p>issued Feb 2025 - No Expiration</p>
-                    <a href="https://learn.nvidia.com/certificates?id=pcbgLaFMQl2c2b-7r5rnnA" target="_blank">See credentials</a>
-                </section>
-                <section>
-                    <span class="icon solid major fa-book"></span>
-                    <h3>Getting Started with Accelerated Computing in CUDA C/C++</h3>
-                    <p>issued Feb 2025 - No Expiration</p>
-                    <a href="https://learn.nvidia.com/certificates?id=PW2-w3jQQ9WshWsg_YMBLQ" target="_blank">See credentials</a>
-                </section>
-            </div>
-            <h3>Microsoft Azure</h3>
-            <div class="features">
-                <div class="inner small-padding">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-3 hide-mobile">
-                                <img alt="Azure logo" class="education-image" src="images/azure-fundamentals.png">
-                            </div>
-                            <div class="col-9 col-12-small">
-                                <h3>Microsoft Certified: Azure Fundamentals</h3>
-                                <p>issued May 2021 - No Expiration </p>
-                                <a href="https://www.credly.com/badges/f2d36129-7df8-462c-9045-548ffbfe6307"
-                                   target="_blank"> See
-                                    credentials</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <h3>Coursera</h3>
-
-            <div class="features">
-                <section>
-                    <span class="icon solid major fa-book"></span>
-                    <h3>Introduction to Concurrent Programming with GPUs</h3>
-                    <p>issued Jan 2025 - No Expiration</p>
-                    <a href="https://coursera.org/share/41095df2ea1e69d0077839b5c3e4a464" target="_blank"> See
-                        credentials</a>
-                </section>
-                <section>
-                    <span class="icon solid major fa-book"></span>
-                    <h3>Neural Networks and Deep Learning</h3>
-                    <p>issued Apr 2021 - No Expiration</p>
-                    <a href="https://coursera.org/share/16a1137f9530b43bc3c3ba943487c09b" target="_blank"> See
-                        credentials</a>
-                </section>
-                <section>
-                    <span class="icon solid major fa-book"></span>
-                    <h3>Developing Applications with Google Cloud Platform specialization</h3>
-                    <p>issued Jul 2020 - No Expiration </p>
-                    <p class="small-font">
-                        following courses are included,<br/>
-                        <a href="https://coursera.org/share/c929ffd6b6d3bd853ddf67c7c63f671f" target="_blank">
-                            Google Cloud Platform Fundamentals: Core Infrastructure
-                        </a>
-                        <br/>
-                        <a href="https://coursera.org/share/032fb2e74f8a7fad0c84d43775ad8ba0">
-                            Getting Started With Application Development
-                        </a>
-                        <br/>
-                        <a href="https://coursera.org/share/3f0a99cc13bc4144d4322240685f44da">
-                            Securing and Integrating Components of your Application
-                        </a>
-                        <br/>
-                        <a href="https://coursera.org/share/324b37a8eb3e98933583ab58f852bbcf">
-                            App Deployment, Debugging, and Performance
-                        </a>
-                    </p>
-                    <a href="https://coursera.org/share/16a1137f9530b43bc3c3ba943487c09b" target="_blank"> See
-                        credentials</a>
-                </section>
-
-                <section>
-                    <span class="icon solid major fa-book"></span>
-                    <h3>Front-End Web UI Frameworks and Tools: Bootstrap 4</h3>
-                    <p>issued Aug 2020 - No Expiration </p>
-                    <a href="https://coursera.org/share/7e571bbb0bc3eb29cb0ce75810300f76" target="_blank"> See
-                        credentials</a>
-                </section>
-                <section>
-                    <span class="icon solid major fa-book"></span>
-                    <h3>AWS Fundamentals: Going Cloud-Native</h3>
-                    <p>issued Jul 2020 - No Expiration </p>
-                    <a href="https://coursera.org/share/ae8490dd63edd693bd3049dbc34a94f8" target="_blank"> See
-                        credentials</a>
-                </section>
-                <section>
-                    <span class="icon solid major fa-book"></span>
-                    <h3>API Design and Fundamentals of Google Cloud's Apigee API Platform</h3>
-                    <p>issued Jun 2020 - No Expiration </p>
-                    <a href="https://coursera.org/share/6805c037055bce93c5c1c73adfc93e50" target="_blank"> See
-                        credentials</a>
-                </section>
-                <section>
-                    <span class="icon solid major fa-book"></span>
-                    <h3>Web Application Security Testing with OWASP ZAP</h3>
-                    <p>issued Jun 2020 - No Expiration </p>
-                    <a href="https://coursera.org/share/ea01f547d8beb8b8dc05015df70aa998" target="_blank"> See
-                        credentials</a>
-                </section>
-
-            </div>
-
-            <h3>Udemy</h3>
-            <div class="features">
-                <section>
-                    <span class="icon solid major fa-book"></span>
-                    <h3>Node JS API Development for Beginners</h3>
-                    <p>issued Feb 2020 - No Expiration </p>
-                    <a href="https://www.udemy.com/certificate/UC-a9e6507b-3c82-4bc4-a6e1-d20a8fc49b9b/"
-                       target="_blank"> See
-                        credentials</a>
-                </section>
-                <section>
-                    <span class="icon solid major fa-book"></span>
-                    <h3>React JS Frontend Web Development for Beginners</h3>
-                    <p>issued Feb 2020 - No Expiration </p>
-                    <a href="https://www.udemy.com/certificate/UC-1423eb3e-2e20-41e6-b724-508ef5b563fa/"
-                       target="_blank"> See
-                        credentials</a>
-                </section>
-            </div>
-
-        </div>
-    </section>
-
-    <!--    <section class="wrapper style2 fade-up" id="projects">
-            <div class="inner">
-
-                <section>
-                    <h2>Projects</h2>
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="col-4 col-6-medium col-12-small">
-                                <div class="features-custom">
-                                    <img alt="final year project logo"
-                                         class="green-background full-width"
-                                         data-position="center center"
-                                         height="200"
-                                         src="images/fyp.png"
-                                    />
-
-                                    <div class="small-padding">
-                                        <h3>Multi-Model Radiography Analysis Framework for Pneumonia and COVID-19</h3>
-                                        <p class="medium-font">Final year Project<br/>
-                                            Ongoing
-                                        </p>
-                                        <ul class="actions">
-                                            <li><a class="button primary"
-                                                   id="fypBtn">Details</a></li>
-                                        </ul>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-4 col-6-medium col-12-small">
-                                <div class="features-custom">
-                                    <img alt="machine learning project logo"
-                                         class="full-width"
-                                         data-position="center center"
-                                         height="200"
-                                         src="images/ml.png"
-                                    />
-
-                                    <div class="small-padding">
-                                        <h3>Pump it Up: Data Mining the Water Table</h3>
-                                        <p class="medium-font"> Semester 7 | Machine Learning
-                                            <br/>
-                                            Aug 2021 - Sep 2021
-                                        </p>
-                                        <ul class="actions">
-                                            <li><a class="button primary"
-                                                   id="pumpItUpBtn">Details</a></li>
-                                        </ul>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-4 col-6-medium col-12-small">
-                                <div class="features-custom">
-                                    <img alt="ds-chat-system"
-                                         class="green-background full-width"
-                                         data-position="center center"
-                                         height="200"
-                                         src="images/ds.png"
-                                    />
-
-                                    <div class="small-padding">
-                                        <h3>Distributed Chat System</h3>
-                                        <p class="medium-font">Semester 7 | Distributed System<br/>
-                                            Sep 2021 - Oct 2021
-                                        </p>
-                                        <ul class="actions">
-                                            <li><a class="button primary"
-                                                   id="dsBtn">Details</a></li>
-                                        </ul>
-
-                                    </div>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-4 col-6-medium col-12-small">
-                                <div class="features-custom">
-                                    <img alt="ncms"
-                                         class="green-background full-width"
-                                         data-position="center center"
-                                         height="200"
-                                         src="images/NCMS.png"
-                                    />
-
-                                    <div class="small-padding">
-                                        <h3>NCMS - WAKANDA</h3>
-                                        <p class="medium-font">SparkX | Individual Assignment<br/>
-                                            Feb 2020 - June 2020
-                                        </p>
-                                        <ul class="actions">
-                                            <li><a class="button primary"
-                                                   id="ncmsBtn">Details</a></li>
-                                        </ul>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-4 col-6-medium col-12-small">
-                                <div class="features-custom">
-                                    <img alt="online bus booking system"
-                                         class="green-background full-width"
-                                         data-position="center center"
-                                         height="200"
-                                         src="images/bus-booking.png"
-                                    />
-
-                                    <div class="small-padding">
-                                        <h3>Online Bus Booking System</h3>
-                                        <p class="medium-font">Semester 5 | Software Engineering Project<br/>
-                                            Feb 2020 - June 2020
-                                        </p>
-                                        <ul class="actions">
-                                            <li><a class="button primary"
-                                                   id="obbsBtn">Details</a></li>
-                                        </ul>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="col-4 col-6-medium col-12-small">
-                                <div class="features-custom">
-                                    <img alt="smartedkit"
-                                         class="green-background full-width"
-                                         data-position="center center"
-                                         height="200"
-                                         src="images/SmartEdkit.PNG"
-                                    />
-
-                                    <div class="small-padding">
-                                        <h3>SmartEdkit</h3>
-                                        <p class="medium-font">Project for code with WIE competition<br/>
-                                            Jul 2019 - Aug 2019
-                                        </p>
-                                        <ul class="actions">
-                                            <li><a class="button primary"
-                                                   id="smartEdBtn">Details</a></li>
-                                        </ul>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </section>
-
-            </div>
-        </section>-->
-    <section class="wrapper style2 fade-up" id="projects">
-        <div class="inner">
-
-            <section>
-                <h2>Projects</h2>
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-4 col-6-small">
-                            <div class="features-custom">
-                                <img alt="final year project logo"
-                                     class="green-background full-width"
-                                     data-position="center center"
-                                     height="200"
-                                     src="images/fyp.png"
-                                />
-
-                                <div class="small-padding">
-                                    <h3>Automated Radiography Analysis Framework Using Deep Learning for Pneumonia and
-                                        Covid-19 Identification</h3>
-                                    <p class="medium-font">Final year Project<br/>
-                                        June 2021 - April 2022
-                                    </p>
-                                    <ul class="actions">
-                                        <li><a class="button primary"
-                                               id="fypBtn">Details</a></li>
-                                    </ul>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-4 col-6-small">
-                            <div class="features-custom">
-                                <img alt="machine learning project logo"
-                                     class="full-width"
-                                     data-position="center center"
-                                     height="200"
-                                     src="images/ml.png"
-                                />
-
-                                <div class="small-padding">
-                                    <h3>Pump it Up: Data Mining the Water Table</h3>
-                                    <p class="medium-font"> Semester 7 | Machine Learning
-                                        <br/>
-                                        Aug 2021 - Sep 2021
-                                    </p>
-                                    <ul class="actions">
-                                        <li><a class="button primary"
-                                               id="pumpItUpBtn">Details</a></li>
-                                    </ul>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-4 col-6-small">
-                            <div class="features-custom">
-                                <img alt="ds-chat-system"
-                                     class="green-background full-width"
-                                     data-position="center center"
-                                     height="200"
-                                     src="images/ds.png"
-                                />
-
-                                <div class="small-padding">
-                                    <h3>Distributed Chat System</h3>
-                                    <p class="medium-font">Semester 7 | Distributed System<br/>
-                                        Sep 2021 - Oct 2021
-                                    </p>
-                                    <ul class="actions">
-                                        <li><a class="button primary"
-                                               id="dsBtn">Details</a></li>
-                                    </ul>
-
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-4 col-6-small">
-                            <div class="features-custom">
-                                <img alt="ncms"
-                                     class="green-background full-width"
-                                     data-position="center center"
-                                     height="200"
-                                     src="images/NCMS.png"
-                                />
-
-                                <div class="small-padding">
-                                    <h3>NCMS - WAKANDA</h3>
-                                    <p class="medium-font">SparkX | Individual Assignment<br/>
-                                        Feb 2020 - June 2020
-                                    </p>
-                                    <ul class="actions">
-                                        <li><a class="button primary"
-                                               id="ncmsBtn">Details</a></li>
-                                    </ul>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-4 col-6-small">
-                            <div class="features-custom">
-                                <img alt="online bus booking system"
-                                     class="green-background full-width"
-                                     data-position="center center"
-                                     height="200"
-                                     src="images/bus-booking.png"
-                                />
-
-                                <div class="small-padding">
-                                    <h3>Online Bus Booking System</h3>
-                                    <p class="medium-font">Semester 5 | Software Engineering Project<br/>
-                                        Feb 2020 - June 2020
-                                    </p>
-                                    <ul class="actions">
-                                        <li><a class="button primary"
-                                               id="obbsBtn">Details</a></li>
-                                    </ul>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-4 col-6-small">
-                            <div class="features-custom">
-                                <img alt="smartedkit"
-                                     class="green-background full-width"
-                                     data-position="center center"
-                                     height="200"
-                                     src="images/SmartEdkit.PNG"
-                                />
-
-                                <div class="small-padding">
-                                    <h3>SmartEdkit</h3>
-                                    <p class="medium-font">Project for code with WIE competition<br/>
-                                        Jul 2019 - Aug 2019
-                                    </p>
-                                    <ul class="actions">
-                                        <li><a class="button primary"
-                                               id="smartEdBtn">Details</a></li>
-                                    </ul>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </section>
-
-        </div>
-    </section>
-
-    <section class="wrapper style1 fullscreen fade-up" id="publications">
-        <div class="inner">
-
-            <section>
-                <h2>Research Publications</h2>
-                <h4>Journals</h4>
-                <p>D. Meedeniya, H. Kumarasinghe, S. Kolonne, C. Fernando, I. Díez and G. Marques, ”Chest X-ray
-                    analysis empowered
-                    with deep learning: A systematic review”, Applied Soft Computing, p. 109319, 2022. , DOI:
-                    <a href="https://doi.org/10.1016/j.asoc.2022.109319"
-                       target="_blank">
-                        https://doi.org/10.1016/j.asoc.2022.109319
-                    </a>
-                </p>
-                <p>K. A. S. H. Kumarasinghe, S. L. Kolonne, K. C. M. Fernando, D. Meedeniya, ”U-Net Based Chest
-                    X-ray Segmentation
-                    with Ensemble Classification for Covid-19 and Pneumonia”, International Journal of Online
-                    and Biomedical Engineering
-                    (iJOE), Vol. 18, No. 7, pp. 161-174, 2022. DOI:
-                    <a href="https://doi.org/10.3991/ijoe.v18i07.30807"
-                       target="_blank">
-                        https://doi.org/10.3991/ijoe.v18i07.30807
-                    </a>
-                </p>
-                <h4>Conferences</h4>
-                <p>C. Fernando, S. Kolonne, H. Kumarasinghe and D. Meedeniya, ”Chest Radiographs Classification
-                    Using Multi-model Deep
-                    Learning: A Comparative Study,” 2022 2nd International Conference on Advanced Research in
-                    Computing (ICARC), 2022,
-                    pp. 165-170, DOI:
-                    <a href="https://doi.org/10.1109/ICARC54489.2022.9753811"
-                       target="_blank">
-                        https://doi.org/10.1109/ICARC54489.2022.9753811
-                    </a>
-                </p>
-                <p>S. Kolonne, C. Fernando, H. Kumarasinghe and D. Meedeniya, ”MobileNetV2 Based Chest X-Rays
-                    Classification,” 2021
-                    International Conference on Decision Aid Sciences and Application (DASA), 2021, pp. 57-61,
-                    DOI:
-                    <a href="https://doi.org/10.1109/DASA53625.2021.9682248"
-                       target="_blank">
-                        https://doi.org/10.1109/DASA53625.2021.9682248
-                    </a>
-                </p>
-
-            </section>
-                <h4>Peer Reviews</h4>
-                <h5>Pre-publication review</h5>
-                <p>Journal of Computational Biology -
-                <a href="https://publons.com/wos-op/review/author/BErAAEU8/">View</a>
-                </p>
-            <section>
-
-            </section>
-
-        </div>
-    </section>
-
-    <section class="wrapper style4 fullscreen fade-up" id="experience">
-        <div class="inner">
-            <h1>Experience</h1>
-            <h3>Software Engineer</h3>
-            <p>Sysco LABS Sri Lanka<br/>
-                May 2022 - January 2024
-            </p>
-            <ul>
-                <li>
-                    Learn new technologies on the job: Jenkins | Chef | AWS | Shell | Terraform
-                </li>
-                <li>
-                    Add new functionalities and modifications to the existing Jenkins pipelines
-                </li>
-                <li>
-                    Modified the existing chef cookbook to support active-active high available architecture
-                </li>
-                <li>
-                    Implemented Lambda function to schedule start and stop AWS instance
-                </li>
-                <li>
-                    Modified existing terraform code to provision new resources in AWS
-                </li>
-                <li>
-                    Design failover process for active-active high available architecture
-                </li>
-                <li>
-                    Implemented new Jenkins pipelines for support functionalities in active-active high available architecture
-                </li>
-            </ul>
-
-
-            <h3>Software Engineer Intern</h3>
-            <p>CodeGen International (Pvt) Ltd<br/>
-                October 2020 - March 2021
-            </p>
-
-            <p>
-            <h3>Database Data Security Project</h3>
-            <ul>
-                <li>Implemented LDAP authentication for an in-house built database security product that detects
-                    sensitive data using Spring Security features
-                </li>
-                <li>Quickly learnt the existing code and extended the system capabilities both at Angular front-end and
-                    REST-API based backend levels
-                </li>
-                <li>Implemented features to support multiple databases; MYSQL, Oracle
-                </li>
-            </ul>
-            <h3>Oracle APEX BI dashboard project</h3>
-            <ul>
-                <li>Learnt on the job and successfully set up the Oracle Database, Oracle APEX environments and
-                    implemented an interactive BI dashboard for booking-related data analysis
-                </li>
-            </ul>
-            <h3>NLP related project</h3>
-            <ul>
-                <li>
-                    Annotated texts and updated gazetteer files and trained the NLP engine which was built for company
-                    usage to identify amenities from the texts
-                </li>
-            </ul>
-            </p>
-        </div>
-    </section>
-
-    <section class="wrapper style2 fade-up" id="achievements">
-        <div class="inner">
-
-            <section>
-                <h2>Achievements</h2>
-                <ul class="alt">
-                    <li><h3>Best Team Process </h3>
-                        <p>Code with WIE: hackathon organized by IEEE WIE Sri Lanka Section
-                        </p>
-                    </li>
-
-                    <li>
-                        <h3> Winners</h3>
-                        <p>HackDown 2020: coding competition organized by
-                            the IEEE WIE Student Affinity Branch of UOM
-
-                        </p>
-                    </li>
-                    <li>
-                        <h3> MoraXtrame</h3>
-                        <p>12 hours programming competition organized by University of
-                            Moratuwa
-                        </p>
-                        <ul class="alt">
-                            <div class="row">
-                                <div class="col-4">
-                                    <li>
-                                        <h4> RANK: 14</h4>
-                                        <p>
-                                            MoraXtreme 5.0
-                                        </p>
-                                    </li>
-                                </div>
-                                <div class="col-4">
-                                    <li>
-                                        <h4> RANK: 14</h4>
-                                        <p>
-                                            MoraXtreme 4.0
-                                        </p>
-                                    </li>
-                                </div>
-                                <div class="col-4">
-                                    <li>
-                                        <h4> RANK: 63</h4>
-                                        <p>
-                                            MoraXtreme 3.0
-                                        </p>
-                                    </li>
-                                </div>
-                            </div>
-                        </ul>
-                    </li>
-                    <li>
-                        <h3> IEEEXtreame</h3>
-                        <p>24 hours programming competition organized by IEEE
-                        </p>
-                        <ul class="alt">
-                            <div class="row">
-                                <div class="col-4">
-                                    <li>
-                                        <h4> GLOBAL RANK: 274</h4>
-                                        <p>
-                                            IEEEXtreme 14.0
-                                        </p>
-                                    </li>
-                                </div>
-                                <div class="col-4">
-                                    <li>
-                                        <h4>GLOBAL RANK: 464</h4>
-                                        <p>
-                                            IEEEXtreme 13.0
-                                        </p>
-                                    </li>
-                                </div>
-                                <div class="col-4">
-                                    <li>
-                                        <h4>GLOBAL RANK: 495</h4>
-                                        <p>
-                                            IEEEXtreme 12.0
-                                        </p>
-                                    </li>
-                                </div>
-                            </div>
-                        </ul>
-                    </li>
-                </ul>
-
-
-            </section>
-
-        </div>
-    </section>
-
-    <section class="wrapper style1 fade-up" id="extracurricular">
-        <div class="inner">
-            <h2>Extracurricular Activities</h2>
-
-            <ul class="alt">
-
-                <li><h3>Webmaster </h3>
-                    <p>IEEE Student Branch of University of Moratuwa 20/21 </p>
-                </li>
-                <li><h3>Webmaster </h3>
-                    <p>Women in Engineering Symposium 2020 and 2021<br/>
-                        Developed a website for the International Women in Engineering Symposium event using
-                        WordPress.<br/>
-                        website link <a href="https://ieeewie.lk/symposium/">https://ieeewie.lk/symposium/</a>
-                    </p>
-                </li>
-                <li>
-                    <h3>Volunteering as a Creative Content Team Member</h3>
-                    <p> IEEE SLSYW Congress 2020</p>
-                </li>
-                <li>
-                    <h3> Developer in goSAFE mobile application</h3>
-                    <p>ACM Student Branch of University of Moratuwa
-                        <br/>Android mobile application to track Covid19 with Bluetooth technology. Handled
-                        database(firebase)
-                        and database relation functions</p>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-
-</div>
-
-<!-- Modal boxes -->
-<div id="pumpItUp" class="wrapper modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close" id="pumpItUpClose">&times;</span>
-            <div class="row">
-                <div class="col-8">
-                    <h2>Pump it Up: Data Mining the Water Table</h2>
-
-                    <ul class="tags">
-                        <li class="tag transparent-tag">Python</li>
-                        <li class="tag transparent-tag">Machine Learning</li>
-                    </ul>
-                </div>
-                <div class="col-4">
-                    <p>Semester 7 | Machine Learning<br/>
-                        Aug 2021 - Sep 2021
-                    </p>
-                </div>
-            </div>
-
-        </div>
-        <div class="modal-body">
-            <div id="wrapper">
-
-                <!-- Main -->
-                <section id="main" class="wrapper">
-                    <div class="inner">
-                        <p>
-                            An individual project for implementing a solution for
-                            <a href="https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/"
-                               target="_blank">
-                                Pump it Up: Data Mining the Water Table </a>
-                            competition in
-                            <a href="https://www.drivendata.org/" target="_blank">
-                                DrivenData. </a>
-                            Followed pre-processing, encoding, feature engineering, and used models like the
-                            Random Forest, Decision Tree, Gradient Boosting Classifier, XGBoost, and MLP Classifier
-                        </p>
-
-                        <h3>Used models</h3>
-                        <ul class="tags">
-                            <li class="tag transparent-tag">MLP Classifier</li>
-                            <li class="tag transparent-tag">Random Forest</li>
-                            <li class="tag transparent-tag">Decision Tree</li>
-                            <li class="tag transparent-tag">XgBoost</li>
-                            <li class="tag transparent-tag">Gradient Boosting Classifier</li>
-                        </ul>
-
-                    </div>
-                </section>
-
-            </div>
-        </div>
-        <div class="modal-footer">
-
-            <div class="center">
-                <a class="button primary"
-                   href="https://github.com/Hashara/CS4622-Machine-Learning-Project"
-                   target="_blank">
-                    View source code</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="fyp" class="wrapper modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <div class="row">
-                <div class="col-8">
-                    <h2>Automated Radiography Analysis Framework Using Deep Learning for Pneumonia and Covid-19
-                        Identification.</h2>
-
-                    <ul class="tags">
-                        <li class="tag transparent-tag">Python</li>
-                        <li class="tag transparent-tag">Machine Learning</li>
-                        <li class="tag transparent-tag">Tensorflow</li>
-                        <li class="tag transparent-tag">Computer Vision</li>
-                        <li class="tag transparent-tag">Convolutional Neural Network</li>
-                    </ul>
-                </div>
-                <div class="col-4">
-                    <p>Research and Development Project <br/>
-                        June 2021 - April 2022
-                    </p>
-                </div>
-            </div>
-
-        </div>
-        <div class="modal-body">
-            <div id="wrapper">
-
-                <!-- Main -->
-                <section id="main" class="wrapper">
-                    <div class="inner">
-                        <p>
-                            An automated Radiography analysis framework for Pneumonia and Covid-19 identification can be
-                            used to provide better performance in chest x-ray analysis for detecting lung infection
-                            conditions.
-                        <li>
-                            A systematic review presenting deep learning-based pneumonia and coronavirus detection
-                            solutions, trends, datasets, guidance for a deep learning process, challenges and future
-                            research directions.
-                        </li>
-                        <li>
-                            Chest x-ray classification with MobileNetV2, InceptionV3, Xception, ResNet50 models with
-                            added top layers
-                        </li>
-                        <li>
-                            Develop an ensemble using the earlier trained MobileNetV2, InceptionV3, Xception, and
-                            ResNet50 models
-                        </li>
-                        <li>
-                            experiment chest x-ray classification with segmentation using U-net architecture
-                        </li>
-                        <li>
-                            Develop a web application for the developed framework consisting of segmentation and
-                            classification as a proof of concept.
-                        </li>
-                        </p>
-
-                        <h3>Publications</h3>
-                        <h4>Journals</h4>
-                        <p>D. Meedeniya, H. Kumarasinghe, S. Kolonne, C. Fernando, I. Díez and G. Marques, ”Chest X-ray
-                            analysis empowered
-                            with deep learning: A systematic review”, Applied Soft Computing, p. 109319, 2022. , DOI:
-                            <a href="https://doi.org/10.1016/j.asoc.2022.109319"
-                               target="_blank">
-                                https://doi.org/10.1016/j.asoc.2022.109319
-                            </a>
-                        </p>
-                        <p>K. A. S. H. Kumarasinghe, S. L. Kolonne, K. C. M. Fernando, D. Meedeniya, ”U-Net Based Chest
-                            X-ray Segmentation
-                            with Ensemble Classification for Covid-19 and Pneumonia”, International Journal of Online
-                            and Biomedical Engineering
-                            (iJOE), Vol. 18, No. 7, pp. 161-174, 2022. DOI:
-                            <a href="https://doi.org/10.3991/ijoe.v18i07.30807"
-                               target="_blank">
-                                https://doi.org/10.3991/ijoe.v18i07.30807
-                            </a>
-                        </p>
-                        <h4>Conferences</h4>
-                        <p>C. Fernando, S. Kolonne, H. Kumarasinghe and D. Meedeniya, ”Chest Radiographs Classification
-                            Using Multi-model Deep
-                            Learning: A Comparative Study,” 2022 2nd International Conference on Advanced Research in
-                            Computing (ICARC), 2022,
-                            pp. 165-170, DOI:
-                            <a href="https://doi.org/10.1109/ICARC54489.2022.9753811"
-                               target="_blank">
-                                https://doi.org/10.1109/ICARC54489.2022.9753811
-                            </a>
-                        </p>
-                        <p>S. Kolonne, C. Fernando, H. Kumarasinghe and D. Meedeniya, ”MobileNetV2 Based Chest X-Rays
-                            Classification,” 2021
-                            International Conference on Decision Aid Sciences and Application (DASA), 2021, pp. 57-61,
-                            DOI:
-                            <a href="https://doi.org/10.1109/DASA53625.2021.9682248"
-                               target="_blank">
-                                https://doi.org/10.1109/DASA53625.2021.9682248
-                            </a>
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-
-                        <div class="center">
-                            <a class="button primary"
-                               href="https://sites.google.com/cse.mrt.ac.lk/biohealth/home/biomedical-imaging-and-computational-modelling/chest-x-ray-analysis"
-                               target="_blank">
-                                View more details</a>
-                        </div>
-                    </div>
-                </section>
-
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div id="ds" class="wrapper modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <div class="row">
-                <div class="col-8">
-                    <h2>Distributed chat system</h2>
-
-                    <ul class="tags">
-                        <li class="tag transparent-tag">Java</li>
-                    </ul>
-                </div>
-                <div class="col-4">
-                    <p>Semester 7 | Distributed System Project<br/>
-                        Sep 2021 - Oct 2021
-                    </p>
-                </div>
-            </div>
-
-        </div>
-        <div class="modal-body">
-            <div id="wrapper">
-
-                <!-- Main -->
-                <section id="main" class="wrapper">
-                    <div class="inner">
-                        <p>
-                            This project is a distributed chat application.
-                            The project's goal is to create chat servers where clients can connect and chat with one
-                            another.
-                            Chat servers offer clients to connect with unique ids, create/join/delete chat rooms,
-                            chatting with other clients, etc.
-                            For leader election, we have used bully algorithm, for failure detection we have used
-                            heartbeat.
-                            We have used the Netty framework for TCP connection.
-                        </p>
-
-                        <h3>My Role</h3>
-                        <p> I developed client requests for deleting room, room list, moving from room and joining for
-                            another room.
-                            Also done part of the bully algorithm.
-                        </p>
-
-
-                    </div>
-                </section>
-
-            </div>
-        </div>
-        <div class="modal-footer">
-
-            <div class="center">
-                <a class="button primary"
-                   href="https://github.com/ShammiL/Distributed-chat-system"
-                   target="_blank">
-                    View source code</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="ncms" class="wrapper modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <div class="row">
-                <div class="col-8">
-                    <h2>NCMS - WAKANDA</h2>
-
-                    <ul class="tags">
-                        <li class="tag transparent-tag">Java</li>
-                        <li class="tag transparent-tag">Java Servlet</li>
-                        <li class="tag transparent-tag">PostgreSQL</li>
-                        <li class="tag transparent-tag">React</li>
-                        <li class="tag transparent-tag">React-redux</li>
-                    </ul>
-                </div>
-                <div class="col-4">
-                    <p>SparkX | Individual Assignment<br/>
-                        June 2021 - July 2021
-                    </p>
-                </div>
-            </div>
-
-        </div>
-        <div class="modal-body">
-            <div id="wrapper">
-
-                <!-- Main -->
-                <section id="main" class="wrapper">
-                    <div class="inner">
-                        <p>
-                            A COVID management tool that has authentication, bed reservation, COVID statistic review.
-                            This applications' REST API was built using JAVA Servlet, the UI was built using React with
-                            React-redux, and PostgreSQL was used as the database. A web application for COVID management
-                            in Wakanda. Additionally for the authentication system was developed using JSON Web Token
-                            (JWT), and for password hashing used jbcrypt. For logging functionality, Log4j has been
-                            used.
-                        </p>
-
-                    </div>
-                </section>
-
-            </div>
-        </div>
-        <div class="modal-footer">
-
-            <div class="center">
-                <a class="button primary"
-                   href="https://github.com/Hashara/sparkx-frontend"
-                   target="_blank">
-                    View frontend code</a>
-                <a class="button primary"
-                   href="https://github.com/Hashara/sparkx-assignment-backend"
-                   target="_blank">
-                    View backend code</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="obbs" class="wrapper modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <div class="row">
-                <div class="col-8">
-                    <h2>Online Bus Booking System</h2>
-
-                    <ul class="tags">
-                        <li class="tag transparent-tag">NodeJs</li>
-                        <li class="tag transparent-tag">Firebase</li>
-                    </ul>
-                </div>
-                <div class="col-4">
-                    <p>Semester 5 | Software Engineering Project<br/>
-                        Feb 2020 - June 2020
-                    </p>
-                </div>
-            </div>
-
-        </div>
-        <div class="modal-body">
-            <div id="wrapper">
-
-                <!-- Main -->
-                <section id="main" class="wrapper">
-                    <div class="inner">
-                        <p>
-                            In this project, a web-based system and two mobile applications, with REST API as the
-                            backend
-                            were
-                            developed where the
-                            passengers can reserve bus seats online by paying the amount. This will facilitate
-                            passengers and conductors, making the ticketing process more convenient.
-                            A mobile application will be developed for the driver/conductor to handle the ticketing
-                            process from their side. The web application will facilitate both bus owners and
-                            passengers.
-                            After paying the relevant amount through the web app or the mobile app the passenger
-                            should receive a receipt confirming the reservation and the conductor/driver should
-                            receive the information about the reservations.
-                        </p>
-
-                        <div class="video-responsive">
-                            <iframe src="https://www.youtube.com/embed/EQjwM0jhZ9o" frameborder="0" allowfullscreen>
-                            </iframe>
-                        </div>
-                        <h3>My Role</h3>
-                        <p> I developed the REST API by using Node js with Express and designed the database(firebase)
-                            of the
-                            system. This was the first REST API I built. I gathered a lot of experience from this
-                            project and was
-                            able to use new tools like Postman, Apache JMeter.</p>
-
-
-                    </div>
-                </section>
-
-            </div>
-        </div>
-        <div class="modal-footer">
-
-            <div class="center">
-                <a class="button primary"
-                   href="https://github.com/Hashara/Transport-booking-system-web-backend"
-                   target="_blank">
-                    View source code</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="smartEd" class="wrapper modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close">&times;</span>
-            <div class="row">
-                <div class="col-8">
-                    <h2>SmartEdkit</h2>
-
-                    <ul class="tags">
-                        <li class="tag transparent-tag">Flutter</li>
-                        <li class="tag transparent-tag">Firebase</li>
-                    </ul>
-                </div>
-                <div class="col-4">
-                    <p>Project for code with WIE competition - 2019
-                        <br/>
-                        Jul 2019 - Aug 2019
-                    </p>
-                </div>
-            </div>
-
-        </div>
-        <div class="modal-body">
-            <div id="wrapper">
-
-                <!-- Main -->
-                <section id="main" class="wrapper">
-                    <div class="inner">
-                        <p>
-                            A web application for school administrators and a mobile application for school teachers,
-                            intended to
-                            improve the efficiency of the school system. This system would help to monitor the
-                            attendance of both
-                            teachers and the students, teachers could take their notes, teachers would receive the
-                            notifications
-                            reminding the next period.
-                        </p>
-                        <div class="video-responsive">
-                            <iframe src="https://drive.google.com/file/d/1NmKnvv-g2gQnyFVD8SmyPQIcyIO44cON/preview"
-                                    allow="autoplay"></iframe>
-                        </div>
-
-                        <h3>My Role</h3>
-                        <p> I developed the mobile application of teachers using flutter.This was a minimum viable
-                            project build
-                            for Code with WIE competition and this was my first mobile application. By developing this
-                            mobile
-                            application I was able to get experience in mobile application development.</p>
-
-                        <h3>Achievements</h3>
-                        <img src="images/Code%20with%20WIE.jpeg"
-                             alt="smartedkit"
-                             class="image-responsive"/>
-                    </div>
-                </section>
-
-            </div>
-        </div>
-        <div class="modal-footer">
-
-            <div class="center">
-                <a class="button primary"
-                   href="https://github.com/Hashara/404MobileApp"
-                   target="_blank">
-                    View source code</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+<!-- ======================================================== Research -->
+<section class="section" id="research" aria-labelledby="research-h">
+	<div class="shell">
+		<div class="section-head"><h2 id="research-h">Research</h2></div>
+
+		<div class="pub-group">
+			<h3>Journal articles</h3>
+			<ol class="pubs">
+				<li class="pub">
+					<span class="year">2022</span>
+					<p class="title"><a href="https://doi.org/10.1016/j.asoc.2022.109319" target="_blank" rel="noopener">Chest X-ray analysis empowered with deep learning: A systematic review</a></p>
+					<p class="authors">D. Meedeniya, <span class="self">H. Kumarasinghe</span>, S. Kolonne, C. Fernando, I. Díez, G. Marques</p>
+					<p class="venue">Applied Soft Computing, p. 109319</p>
+					<ul class="links"><li><a href="https://doi.org/10.1016/j.asoc.2022.109319" target="_blank" rel="noopener">DOI 10.1016/j.asoc.2022.109319</a></li></ul>
+				</li>
+				<li class="pub">
+					<span class="year">2022</span>
+					<p class="title"><a href="https://doi.org/10.3991/ijoe.v18i07.30807" target="_blank" rel="noopener">U-Net Based Chest X-ray Segmentation with Ensemble Classification for Covid-19 and Pneumonia</a></p>
+					<p class="authors"><span class="self">K. A. S. H. Kumarasinghe</span>, S. L. Kolonne, K. C. M. Fernando, D. Meedeniya</p>
+					<p class="venue">International Journal of Online and Biomedical Engineering (iJOE), vol. 18, no. 7, pp. 161–174</p>
+					<ul class="links"><li><a href="https://doi.org/10.3991/ijoe.v18i07.30807" target="_blank" rel="noopener">DOI 10.3991/ijoe.v18i07.30807</a></li></ul>
+				</li>
+			</ol>
+		</div>
+
+		<div class="pub-group">
+			<h3>Conference papers</h3>
+			<ol class="pubs">
+				<li class="pub">
+					<span class="year">2022</span>
+					<p class="title"><a href="https://doi.org/10.1109/ICARC54489.2022.9753811" target="_blank" rel="noopener">Chest Radiographs Classification Using Multi-model Deep Learning: A Comparative Study</a></p>
+					<p class="authors">C. Fernando, S. Kolonne, <span class="self">H. Kumarasinghe</span>, D. Meedeniya</p>
+					<p class="venue">2nd International Conference on Advanced Research in Computing (ICARC), pp. 165–170</p>
+					<ul class="links"><li><a href="https://doi.org/10.1109/ICARC54489.2022.9753811" target="_blank" rel="noopener">DOI 10.1109/ICARC54489.2022.9753811</a></li></ul>
+				</li>
+				<li class="pub">
+					<span class="year">2021</span>
+					<p class="title"><a href="https://doi.org/10.1109/DASA53625.2021.9682248" target="_blank" rel="noopener">MobileNetV2 Based Chest X-Rays Classification</a></p>
+					<p class="authors">S. Kolonne, C. Fernando, <span class="self">H. Kumarasinghe</span>, D. Meedeniya</p>
+					<p class="venue">International Conference on Decision Aid Sciences and Application (DASA), pp. 57–61</p>
+					<ul class="links"><li><a href="https://doi.org/10.1109/DASA53625.2021.9682248" target="_blank" rel="noopener">DOI 10.1109/DASA53625.2021.9682248</a></li></ul>
+				</li>
+			</ol>
+		</div>
+
+		<div class="pub-group">
+			<h3>Peer review</h3>
+			<ol class="pubs">
+				<li class="pub">
+					<span class="year">—</span>
+					<p class="title">Journal of Computational Biology</p>
+					<p class="authors">Pre-publication reviewer</p>
+					<ul class="links"><li><a href="https://publons.com/wos-op/review/author/BErAAEU8/" target="_blank" rel="noopener">Review record</a></li></ul>
+				</li>
+			</ol>
+		</div>
+	</div>
+</section>
+
+<!-- ======================================================== Projects -->
+<section class="section" id="projects" aria-labelledby="projects-h">
+	<div class="shell">
+		<div class="section-head"><h2 id="projects-h">Projects</h2><span class="count mono">8</span></div>
+
+		<ul class="projects">
+			<li class="project">
+				<img src="images/proj-fyp.webp" width="400" height="400" loading="lazy" decoding="async" alt="">
+				<div class="body">
+					<h3>Automated Radiography Analysis Framework Using Deep Learning for Pneumonia and Covid-19 Identification</h3>
+					<p class="meta">Final year research &amp; development project · Jun 2021 – Apr 2022</p>
+					<ul class="tags"><li>Python</li><li>TensorFlow</li><li>Computer Vision</li><li>CNN</li></ul>
+				</div>
+				<button class="open" type="button" data-dialog="p-fyp">Details</button>
+			</li>
+			<li class="project">
+				<img src="images/proj-ml.webp" width="400" height="400" loading="lazy" decoding="async" alt="">
+				<div class="body">
+					<h3>Pump it Up: Data Mining the Water Table</h3>
+					<p class="meta">Semester 7 · Machine Learning · Aug – Sep 2021</p>
+					<ul class="tags"><li>Python</li><li>Machine Learning</li></ul>
+				</div>
+				<button class="open" type="button" data-dialog="p-ml">Details</button>
+			</li>
+			<li class="project">
+				<img src="images/proj-ds.webp" width="400" height="400" loading="lazy" decoding="async" alt="">
+				<div class="body">
+					<h3>Distributed Chat System</h3>
+					<p class="meta">Semester 7 · Distributed Systems · Sep – Oct 2021</p>
+					<ul class="tags"><li>Java</li><li>Netty</li></ul>
+				</div>
+				<button class="open" type="button" data-dialog="p-ds">Details</button>
+			</li>
+			<li class="project">
+				<img src="images/proj-ncms.webp" width="400" height="400" loading="lazy" decoding="async" alt="">
+				<div class="body">
+					<h3>NCMS — WAKANDA</h3>
+					<p class="meta">SparkX · Individual assignment · Jun – Jul 2021</p>
+					<ul class="tags"><li>Java</li><li>Servlet</li><li>PostgreSQL</li><li>React</li></ul>
+				</div>
+				<button class="open" type="button" data-dialog="p-ncms">Details</button>
+			</li>
+			<li class="project">
+				<img src="images/proj-gosafe.webp" width="400" height="400" loading="lazy" decoding="async" alt="">
+				<div class="body">
+					<h3>goSAFE</h3>
+					<p class="meta">ACM Student Branch, University of Moratuwa · May – Jun 2020</p>
+					<ul class="tags"><li>Android</li><li>Java</li><li>Firebase</li></ul>
+				</div>
+				<button class="open" type="button" data-dialog="p-gosafe">Details</button>
+			</li>
+			<li class="project">
+				<img src="images/proj-obbs.webp" width="200" height="200" loading="lazy" decoding="async" alt="">
+				<div class="body">
+					<h3>Online Bus Booking System</h3>
+					<p class="meta">Semester 5 · Software Engineering project · Feb – Jun 2020</p>
+					<ul class="tags"><li>Node.js</li><li>Express</li><li>Firebase</li></ul>
+				</div>
+				<button class="open" type="button" data-dialog="p-obbs">Details</button>
+			</li>
+			<li class="project">
+				<img src="images/proj-smarted.webp" width="72" height="73" loading="lazy" decoding="async" alt="">
+				<div class="body">
+					<h3>SmartEdkit</h3>
+					<p class="meta">Code with WIE competition · Jul – Aug 2019</p>
+					<ul class="tags"><li>Flutter</li><li>Firebase</li></ul>
+				</div>
+				<button class="open" type="button" data-dialog="p-smarted">Details</button>
+			</li>
+			<li class="project">
+				<img src="images/proj-healers.webp" width="136" height="58" loading="lazy" decoding="async" alt="">
+				<div class="body">
+					<h3>Healers</h3>
+					<p class="meta">Semester 3 project · Mar – Jun 2019</p>
+					<ul class="tags"><li>PHP</li><li>MySQL</li><li>HTML</li><li>CSS</li></ul>
+				</div>
+				<button class="open" type="button" data-dialog="p-healers">Details</button>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<!-- ======================================================== Experience -->
+<section class="section" id="experience" aria-labelledby="experience-h">
+	<div class="shell">
+		<div class="section-head"><h2 id="experience-h">Experience</h2></div>
+
+		<ol class="entries">
+			<li class="entry">
+				<span class="when">2022 – 2024</span>
+				<h3>Software Engineer</h3>
+				<p class="where">Sysco LABS Sri Lanka · May 2022 – January 2024</p>
+				<ul>
+					<li>Learned new technologies on the job: Jenkins, Chef, AWS, Shell, Terraform.</li>
+					<li>Added new functionality and modifications to existing Jenkins pipelines.</li>
+					<li>Modified the existing Chef cookbook to support active-active highly available architecture.</li>
+					<li>Implemented a Lambda function to schedule starting and stopping AWS instances.</li>
+					<li>Modified existing Terraform code to provision new resources in AWS.</li>
+					<li>Designed the failover process for active-active highly available architecture.</li>
+					<li>Implemented new Jenkins pipelines supporting active-active highly available architecture.</li>
+				</ul>
+			</li>
+			<li class="entry">
+				<span class="when">2020 – 2021</span>
+				<h3>Software Engineer Intern</h3>
+				<p class="where">CodeGen International (Pvt) Ltd · October 2020 – March 2021</p>
+				<div class="sub">
+					<div>
+						<h4>Database data security project</h4>
+						<ul>
+							<li>Implemented LDAP authentication for an in-house database security product that detects sensitive data, using Spring Security features.</li>
+							<li>Quickly learned the existing code and extended system capabilities at both the Angular front end and the REST-API backend.</li>
+							<li>Implemented support for multiple databases: MySQL and Oracle.</li>
+						</ul>
+					</div>
+					<div>
+						<h4>Oracle APEX BI dashboard project</h4>
+						<ul>
+							<li>Set up Oracle Database and Oracle APEX environments and implemented an interactive BI dashboard for booking-related data analysis.</li>
+						</ul>
+					</div>
+					<div>
+						<h4>NLP project</h4>
+						<ul>
+							<li>Annotated texts, updated gazetteer files and trained the in-house NLP engine to identify amenities from text.</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+		</ol>
+	</div>
+</section>
+
+<!-- ======================================================== Education -->
+<section class="section" id="education" aria-labelledby="education-h">
+	<div class="shell">
+		<div class="section-head"><h2 id="education-h">Education</h2></div>
+
+		<ol class="entries">
+			<li class="entry">
+				<span class="when">Current</span>
+				<img class="logo" src="images/anu.webp" width="160" height="160" loading="lazy" decoding="async" alt="">
+				<h3>Doctor of Philosophy</h3>
+				<p class="where">School of Computing, ANU College of Systems &amp; Society<br>The Australian National University</p>
+			</li>
+			<li class="entry">
+				<span class="when">2017 – 2022</span>
+				<img class="logo" src="images/uom.webp" width="160" height="170" loading="lazy" decoding="async" alt="">
+				<h3>BSc Eng (Hons), Computer Science and Engineering</h3>
+				<p class="where">University of Moratuwa · GPA 3.70 / 4.20<br>First Class Honours · Dean's List for semesters 1, 6, 7 and 8</p>
+			</li>
+			<li class="entry">
+				<span class="when">2021</span>
+				<img class="logo" src="images/sparkx.webp" width="293" height="70" loading="lazy" decoding="async" alt="">
+				<h3>SparkX Professional Development Program</h3>
+				<p class="where"><a href="https://www.spark.lk/our-programmes/spark-x.html" target="_blank" rel="noopener">SparkX Academy, Sri Lanka</a> · Mar – Sep 2021</p>
+			</li>
+			<li class="entry">
+				<span class="when">2014 – 2016</span>
+				<img class="logo" src="images/devi.webp" width="160" height="160" loading="lazy" decoding="async" alt="">
+				<h3>GCE Advanced Level</h3>
+				<p class="where">Devi Balika Vidyalaya, Colombo 08 · AAA · Island rank 158</p>
+			</li>
+		</ol>
+
+		<div class="pub-group" style="margin-top:3rem">
+			<h3>Certifications</h3>
+			<ol class="entries">
+				<li class="entry">
+					<span class="when">2025</span>
+					<h3>Fundamentals of Accelerated Computing with OpenACC</h3>
+					<p class="where">NVIDIA · issued Feb 2025</p>
+					<ul class="links"><li><a href="https://learn.nvidia.com/certificates?id=pcbgLaFMQl2c2b-7r5rnnA" target="_blank" rel="noopener">Credential</a></li></ul>
+				</li>
+				<li class="entry">
+					<span class="when">2025</span>
+					<h3>Getting Started with Accelerated Computing in CUDA C/C++</h3>
+					<p class="where">NVIDIA · issued Feb 2025</p>
+					<ul class="links"><li><a href="https://learn.nvidia.com/certificates?id=PW2-w3jQQ9WshWsg_YMBLQ" target="_blank" rel="noopener">Credential</a></li></ul>
+				</li>
+				<li class="entry">
+					<span class="when">2025</span>
+					<h3>Introduction to Concurrent Programming with GPUs</h3>
+					<p class="where">Coursera · issued Jan 2025</p>
+					<ul class="links"><li><a href="https://coursera.org/share/41095df2ea1e69d0077839b5c3e4a464" target="_blank" rel="noopener">Credential</a></li></ul>
+				</li>
+				<li class="entry">
+					<span class="when">2021</span>
+					<h3>Microsoft Certified: Azure Fundamentals</h3>
+					<img class="logo" src="images/azure.webp" width="160" height="160" loading="lazy" decoding="async" alt="">
+					<p class="where">Microsoft · issued May 2021</p>
+					<ul class="links"><li><a href="https://www.credly.com/badges/f2d36129-7df8-462c-9045-548ffbfe6307" target="_blank" rel="noopener">Credential</a></li></ul>
+				</li>
+				<li class="entry">
+					<span class="when">2021</span>
+					<h3>Neural Networks and Deep Learning</h3>
+					<p class="where">Coursera · issued Apr 2021</p>
+					<ul class="links"><li><a href="https://coursera.org/share/16a1137f9530b43bc3c3ba943487c09b" target="_blank" rel="noopener">Credential</a></li></ul>
+				</li>
+				<li class="entry">
+					<span class="when">2020</span>
+					<h3>Developing Applications with Google Cloud Platform (specialisation)</h3>
+					<p class="where">Coursera · issued Jul 2020 · four courses</p>
+					<ul class="links">
+						<li><a href="https://coursera.org/share/c929ffd6b6d3bd853ddf67c7c63f671f" target="_blank" rel="noopener">GCP Fundamentals: Core Infrastructure</a></li>
+						<li><a href="https://coursera.org/share/032fb2e74f8a7fad0c84d43775ad8ba0" target="_blank" rel="noopener">Getting Started With Application Development</a></li>
+						<li><a href="https://coursera.org/share/3f0a99cc13bc4144d4322240685f44da" target="_blank" rel="noopener">Securing and Integrating Components</a></li>
+						<li><a href="https://coursera.org/share/324b37a8eb3e98933583ab58f852bbcf" target="_blank" rel="noopener">App Deployment, Debugging and Performance</a></li>
+					</ul>
+				</li>
+				<li class="entry">
+					<span class="when">2020</span>
+					<h3>Other Coursera and Udemy certificates</h3>
+					<p class="where">Front-End Web UI Frameworks (Bootstrap 4) · AWS Fundamentals: Going Cloud-Native · API Design and Fundamentals of Google Cloud's Apigee API Platform · Web Application Security Testing with OWASP ZAP · Node JS API Development · React JS Frontend Web Development</p>
+					<ul class="links">
+						<li><a href="https://coursera.org/share/7e571bbb0bc3eb29cb0ce75810300f76" target="_blank" rel="noopener">Bootstrap 4</a></li>
+						<li><a href="https://coursera.org/share/ae8490dd63edd693bd3049dbc34a94f8" target="_blank" rel="noopener">AWS Fundamentals</a></li>
+						<li><a href="https://coursera.org/share/6805c037055bce93c5c1c73adfc93e50" target="_blank" rel="noopener">Apigee API Platform</a></li>
+						<li><a href="https://coursera.org/share/ea01f547d8beb8b8dc05015df70aa998" target="_blank" rel="noopener">OWASP ZAP</a></li>
+						<li><a href="https://www.udemy.com/certificate/UC-a9e6507b-3c82-4bc4-a6e1-d20a8fc49b9b/" target="_blank" rel="noopener">Node JS API</a></li>
+						<li><a href="https://www.udemy.com/certificate/UC-1423eb3e-2e20-41e6-b724-508ef5b563fa/" target="_blank" rel="noopener">React JS</a></li>
+					</ul>
+				</li>
+			</ol>
+		</div>
+	</div>
+</section>
+
+<!-- ======================================================== Skills -->
+<section class="section" id="skills" aria-labelledby="skills-h">
+	<div class="shell">
+		<div class="section-head"><h2 id="skills-h">Skills</h2></div>
+
+		<div class="skill-groups">
+			<div>
+				<h3>Research areas</h3>
+				<ul class="tags"><li>Phylogenetics</li><li>Bioinformatics</li><li>Machine Learning</li><li>Computer Vision</li><li>Parallel Programming</li><li>Distributed Systems</li></ul>
+			</div>
+			<div>
+				<h3>Parallel &amp; HPC</h3>
+				<ul class="tags"><li>CUDA</li><li>OpenACC</li><li>OpenMP</li><li>MPI</li></ul>
+			</div>
+			<div>
+				<h3>Languages</h3>
+				<ul class="tags"><li>Python</li><li>C++</li><li>Java</li><li>JavaScript</li><li>PL/SQL</li><li>PHP</li></ul>
+			</div>
+			<div>
+				<h3>Cloud &amp; DevOps</h3>
+				<ul class="tags"><li>AWS</li><li>Google Cloud</li><li>Microsoft Azure</li><li>Terraform</li><li>Progress Chef</li><li>Jenkins</li></ul>
+			</div>
+			<div>
+				<h3>Web</h3>
+				<ul class="tags"><li>Node.js</li><li>Spring Boot</li><li>React</li><li>Angular</li><li>HTML</li><li>CSS</li></ul>
+			</div>
+			<div>
+				<h3>Data &amp; tooling</h3>
+				<ul class="tags"><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Firebase</li><li>Git</li><li>Linux</li><li>Bash</li></ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ======================================================== Awards & activities -->
+<section class="section" id="activities" aria-labelledby="activities-h">
+	<div class="shell">
+		<div class="section-head"><h2 id="activities-h">Awards &amp; activities</h2></div>
+
+		<ol class="entries">
+			<li class="entry">
+				<span class="when">2019</span>
+				<h3>Best Team Process</h3>
+				<p class="where">Code with WIE — hackathon organised by IEEE WIE Sri Lanka Section</p>
+			</li>
+			<li class="entry">
+				<span class="when">2020</span>
+				<h3>Winners</h3>
+				<p class="where">HackDown 2020 — coding competition organised by the IEEE WIE Student Affinity Branch of the University of Moratuwa</p>
+			</li>
+			<li class="entry">
+				<span class="when">2019 – 2021</span>
+				<h3>MoraXtreme</h3>
+				<p class="where">12-hour programming competition organised by the University of Moratuwa</p>
+				<ul class="ranks">
+					<li>MoraXtreme 5.0 · rank <strong>14</strong></li>
+					<li>MoraXtreme 4.0 · rank <strong>14</strong></li>
+					<li>MoraXtreme 3.0 · rank <strong>63</strong></li>
+				</ul>
+			</li>
+			<li class="entry">
+				<span class="when">2018 – 2020</span>
+				<h3>IEEEXtreme</h3>
+				<p class="where">24-hour programming competition organised by IEEE</p>
+				<ul class="ranks">
+					<li>IEEEXtreme 14.0 · global rank <strong>274</strong></li>
+					<li>IEEEXtreme 13.0 · global rank <strong>464</strong></li>
+					<li>IEEEXtreme 12.0 · global rank <strong>495</strong></li>
+				</ul>
+			</li>
+			<li class="entry">
+				<span class="when">2020 – 2021</span>
+				<h3>Webmaster</h3>
+				<p class="where">IEEE Student Branch of the University of Moratuwa</p>
+			</li>
+			<li class="entry">
+				<span class="when">2020 – 2021</span>
+				<h3>Webmaster</h3>
+				<p class="where">Women in Engineering Symposium 2020 and 2021 — built the website for the International Women in Engineering Symposium using WordPress.</p>
+				<ul class="links"><li><a href="https://ieeewie.lk/symposium/" target="_blank" rel="noopener">ieeewie.lk/symposium</a></li></ul>
+			</li>
+			<li class="entry">
+				<span class="when">2020</span>
+				<h3>Creative Content Team volunteer</h3>
+				<p class="where">IEEE SLSYW Congress 2020</p>
+			</li>
+		</ol>
+	</div>
+</section>
+
+</main>
+
+<!-- ======================================================== Footer -->
+<footer class="site-footer">
+	<div class="shell">
+		<p>© <span id="year">2026</span> Hashara Kumarasinghe · Canberra, Australia</p>
+		<ul class="links">
+			<li><a href="https://scholar.google.com/citations?user=EtRv_0sAAAAJ" target="_blank" rel="me noopener">Scholar</a></li>
+			<li><a href="https://github.com/Hashara" target="_blank" rel="me noopener">GitHub</a></li>
+			<li><a href="https://www.linkedin.com/in/hashara/" target="_blank" rel="me noopener">LinkedIn</a></li>
+			<li><a href="mailto:kumarasinghe.k.a.s.h@gmail.com">Email</a></li>
+		</ul>
+	</div>
+</footer>
+
+<!-- ======================================================== Project dialogs -->
+
+<dialog class="detail" id="p-fyp" aria-labelledby="p-fyp-h">
+	<div class="dialog-inner">
+		<div class="dialog-head">
+			<div>
+				<h2 id="p-fyp-h">Automated Radiography Analysis Framework Using Deep Learning for Pneumonia and Covid-19 Identification</h2>
+				<p class="meta">Research &amp; development project · June 2021 – April 2022</p>
+			</div>
+			<button class="dialog-close" type="button" aria-label="Close" autofocus>
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+			</button>
+			<ul class="tags"><li>Python</li><li>TensorFlow</li><li>Machine Learning</li><li>Computer Vision</li><li>Convolutional Neural Network</li></ul>
+		</div>
+		<div class="prose">
+			<p>An automated radiography analysis framework for pneumonia and Covid-19 identification, providing better performance in chest X-ray analysis for detecting lung infection conditions.</p>
+			<ul>
+				<li>A systematic review presenting deep-learning-based pneumonia and coronavirus detection solutions, trends, datasets, guidance for a deep learning process, challenges and future research directions.</li>
+				<li>Chest X-ray classification with MobileNetV2, InceptionV3, Xception and ResNet50 models with added top layers.</li>
+				<li>An ensemble developed from the trained MobileNetV2, InceptionV3, Xception and ResNet50 models.</li>
+				<li>Experiments on chest X-ray classification with segmentation using a U-Net architecture.</li>
+				<li>A web application for the framework, combining segmentation and classification as a proof of concept.</li>
+			</ul>
+			<h3>Resulting publications</h3>
+			<p>Four peer-reviewed outputs came out of this work — see the <a href="#research">Research</a> section.</p>
+			<ul class="links">
+				<li><a href="https://sites.google.com/cse.mrt.ac.lk/biohealth/home/biomedical-imaging-and-computational-modelling/chest-x-ray-analysis" target="_blank" rel="noopener">Project page</a></li>
+			</ul>
+		</div>
+	</div>
+</dialog>
+
+<dialog class="detail" id="p-ml" aria-labelledby="p-ml-h">
+	<div class="dialog-inner">
+		<div class="dialog-head">
+			<div>
+				<h2 id="p-ml-h">Pump it Up: Data Mining the Water Table</h2>
+				<p class="meta">Semester 7 · Machine Learning · Aug – Sep 2021</p>
+			</div>
+			<button class="dialog-close" type="button" aria-label="Close" autofocus>
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+			</button>
+			<ul class="tags"><li>Python</li><li>Machine Learning</li></ul>
+		</div>
+		<div class="prose">
+			<p>An individual project implementing a solution for the <a href="https://www.drivendata.org/competitions/7/pump-it-up-data-mining-the-water-table/" target="_blank" rel="noopener">Pump it Up: Data Mining the Water Table</a> competition on <a href="https://www.drivendata.org/" target="_blank" rel="noopener">DrivenData</a>. Covered pre-processing, encoding and feature engineering.</p>
+			<h3>Models used</h3>
+			<ul class="tags"><li>MLP Classifier</li><li>Random Forest</li><li>Decision Tree</li><li>XGBoost</li><li>Gradient Boosting Classifier</li></ul>
+			<ul class="links"><li><a href="https://github.com/Hashara/CS4622-Machine-Learning-Project" target="_blank" rel="noopener">Source code</a></li></ul>
+		</div>
+	</div>
+</dialog>
+
+<dialog class="detail" id="p-ds" aria-labelledby="p-ds-h">
+	<div class="dialog-inner">
+		<div class="dialog-head">
+			<div>
+				<h2 id="p-ds-h">Distributed Chat System</h2>
+				<p class="meta">Semester 7 · Distributed Systems · Sep – Oct 2021</p>
+			</div>
+			<button class="dialog-close" type="button" aria-label="Close" autofocus>
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+			</button>
+			<ul class="tags"><li>Java</li><li>Netty</li></ul>
+		</div>
+		<div class="prose">
+			<p>A distributed chat application. The goal was to build chat servers that clients can connect to and chat through — connecting with unique IDs, creating, joining and deleting chat rooms, and messaging other clients. Leader election uses the bully algorithm, failure detection uses heartbeats, and the Netty framework handles TCP connections.</p>
+			<h3>My role</h3>
+			<p>I developed the client requests for deleting a room, listing rooms, and moving between and joining rooms, and implemented part of the bully algorithm.</p>
+			<ul class="links"><li><a href="https://github.com/ShammiL/Distributed-chat-system" target="_blank" rel="noopener">Source code</a></li></ul>
+		</div>
+	</div>
+</dialog>
+
+<dialog class="detail" id="p-ncms" aria-labelledby="p-ncms-h">
+	<div class="dialog-inner">
+		<div class="dialog-head">
+			<div>
+				<h2 id="p-ncms-h">NCMS — WAKANDA</h2>
+				<p class="meta">SparkX · Individual assignment · Jun – Jul 2021</p>
+			</div>
+			<button class="dialog-close" type="button" aria-label="Close" autofocus>
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+			</button>
+			<ul class="tags"><li>Java</li><li>Java Servlet</li><li>PostgreSQL</li><li>React</li><li>React-Redux</li></ul>
+		</div>
+		<div class="prose">
+			<p>A Covid management tool with authentication, bed reservation and Covid statistics review. The REST API was built with Java Servlets, the UI with React and React-Redux, and PostgreSQL as the database. Authentication uses JSON Web Tokens, password hashing uses jBCrypt, and logging uses Log4j.</p>
+			<ul class="links">
+				<li><a href="https://github.com/Hashara/sparkx-frontend" target="_blank" rel="noopener">Frontend source</a></li>
+				<li><a href="https://github.com/Hashara/sparkx-assignment-backend" target="_blank" rel="noopener">Backend source</a></li>
+			</ul>
+		</div>
+	</div>
+</dialog>
+
+<dialog class="detail" id="p-gosafe" aria-labelledby="p-gosafe-h">
+	<div class="dialog-inner">
+		<div class="dialog-head">
+			<div>
+				<h2 id="p-gosafe-h">goSAFE</h2>
+				<p class="meta">ACM Student Branch, University of Moratuwa · May – Jun 2020</p>
+			</div>
+			<button class="dialog-close" type="button" aria-label="Close" autofocus>
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+			</button>
+			<ul class="tags"><li>Native Android</li><li>Java</li><li>Firebase</li></ul>
+		</div>
+		<div class="prose">
+			<p>An Android mobile application to track Covid-19 using Bluetooth technology.</p>
+			<h3>My role</h3>
+			<p>I handled the Firebase database and its relation functions. This was my first native Android application.</p>
+			<ul class="links"><li><a href="https://github.com/ACM-student-chapter-UOM/goSAFE_android" target="_blank" rel="noopener">Source code</a></li></ul>
+		</div>
+	</div>
+</dialog>
+
+<dialog class="detail" id="p-obbs" aria-labelledby="p-obbs-h">
+	<div class="dialog-inner">
+		<div class="dialog-head">
+			<div>
+				<h2 id="p-obbs-h">Online Bus Booking System</h2>
+				<p class="meta">Semester 5 · Software Engineering project · Feb – Jun 2020</p>
+			</div>
+			<button class="dialog-close" type="button" aria-label="Close" autofocus>
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+			</button>
+			<ul class="tags"><li>Node.js</li><li>Express</li><li>Firebase</li></ul>
+		</div>
+		<div class="prose">
+			<p>A web-based system and two mobile applications with a REST API backend, letting passengers reserve bus seats online. A mobile application handles ticketing for the driver or conductor; the web application serves both bus owners and passengers. After payment, the passenger receives a receipt confirming the reservation and the conductor receives the reservation details.</p>
+			<div class="embed">
+				<iframe src="https://www.youtube-nocookie.com/embed/EQjwM0jhZ9o" title="Online Bus Booking System demonstration" loading="lazy" allowfullscreen></iframe>
+			</div>
+			<h3>My role</h3>
+			<p>I developed the REST API using Node.js with Express and designed the Firebase database. This was the first REST API I built; I gained a lot of experience and used new tools such as Postman and Apache JMeter.</p>
+			<ul class="links"><li><a href="https://github.com/Hashara/Transport-booking-system-web-backend" target="_blank" rel="noopener">Source code</a></li></ul>
+		</div>
+	</div>
+</dialog>
+
+<dialog class="detail" id="p-smarted" aria-labelledby="p-smarted-h">
+	<div class="dialog-inner">
+		<div class="dialog-head">
+			<div>
+				<h2 id="p-smarted-h">SmartEdkit</h2>
+				<p class="meta">Code with WIE competition · Jul – Aug 2019</p>
+			</div>
+			<button class="dialog-close" type="button" aria-label="Close" autofocus>
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+			</button>
+			<ul class="tags"><li>Flutter</li><li>Firebase</li></ul>
+		</div>
+		<div class="prose">
+			<p>A web application for school administrators and a mobile application for school teachers, intended to improve the efficiency of the school system. It monitors attendance for both teachers and students, lets teachers take notes, and sends notifications reminding them of the next period.</p>
+			<div class="embed">
+				<iframe src="https://drive.google.com/file/d/1NmKnvv-g2gQnyFVD8SmyPQIcyIO44cON/preview" title="SmartEdkit demonstration" loading="lazy"></iframe>
+			</div>
+			<h3>My role</h3>
+			<p>I developed the teachers' mobile application using Flutter. This was a minimum viable product built for the Code with WIE competition and my first mobile application.</p>
+			<h3>Award</h3>
+			<img class="shot" src="images/code-with-wie.webp" width="1200" height="842" loading="lazy" decoding="async" alt="Team receiving the Best Team Process award at Code with WIE">
+			<ul class="links"><li><a href="https://github.com/Hashara/404MobileApp" target="_blank" rel="noopener">Source code</a></li></ul>
+		</div>
+	</div>
+</dialog>
+
+<dialog class="detail" id="p-healers" aria-labelledby="p-healers-h">
+	<div class="dialog-inner">
+		<div class="dialog-head">
+			<div>
+				<h2 id="p-healers-h">Healers</h2>
+				<p class="meta">Semester 3 project · Mar – Jun 2019</p>
+			</div>
+			<button class="dialog-close" type="button" aria-label="Close" autofocus>
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+			</button>
+			<ul class="tags"><li>PHP</li><li>MySQL</li><li>HTML</li><li>CSS</li></ul>
+		</div>
+		<div class="prose">
+			<p>A web application connecting students and mentors within the university. It eases communication between students and mentors — mentors can keep track of their students and assign tasks.</p>
+			<h3>My role</h3>
+			<p>I developed the authentication system, the messaging function and the mentor-selection function, both backend and frontend. This was the first web application I built. Frameworks were not permitted, so we built it on an MVC architecture — I learned the basics of web development from this project.</p>
+			<ul class="links"><li><a href="https://github.com/Hashara/mvc-Healer" target="_blank" rel="noopener">Source code</a></li></ul>
+		</div>
+	</div>
+</dialog>
 
 </body>
 </html>
