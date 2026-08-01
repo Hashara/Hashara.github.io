@@ -1,0 +1,1346 @@
+/* ==========================================================================
+   Hashara Kumarasinghe — personal site
+   "Ledger": restrained academic editorial. Hand-written, no build step.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. Fonts — self-hosted, latin subset, variable weight axis only
+   -------------------------------------------------------------------------- */
+
+@font-face {
+	font-family: "Source Serif 4";
+	font-style: normal;
+	font-weight: 400 600;
+	font-display: swap;
+	src: url("../fonts/source-serif-4-latin.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400 600;
+	font-display: swap;
+	src: url("../fonts/inter-latin.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "JetBrains Mono";
+	font-style: normal;
+	font-weight: 400 500;
+	font-display: swap;
+	src: url("../fonts/jetbrains-mono-latin.woff2") format("woff2");
+}
+
+/* Metric-matched fallbacks so a font swap does not reflow the page. Measured
+   cold-cache shift before this: -196px document height, -110px to #research. */
+@font-face {
+	font-family: "Serif Fallback";
+	src: local("Georgia"), local("Times New Roman"), local("Times");
+	size-adjust: 95%;
+	ascent-override: 90%;
+	descent-override: 25%;
+	line-gap-override: 0%;
+}
+
+@font-face {
+	font-family: "Sans Fallback";
+	src: local("Helvetica Neue"), local("Arial"), local("Liberation Sans");
+	size-adjust: 88%;
+	ascent-override: 90%;
+	descent-override: 22%;
+	line-gap-override: 0%;
+}
+
+/* --------------------------------------------------------------------------
+   1. Tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+	color-scheme: light dark;
+
+	/* Light (default) */
+	--bg: #fbfaf8;
+	--surface: #f3f1ec;
+	--text: #16150f;
+	--muted: #615c52;
+	--rule: #dedacf;
+	--accent: #1d4e89;
+	--accent-soft: #e6eef8;
+
+	/* --rule is a decorative hairline at 1.34:1 and must never carry meaning.
+	   Anything that delineates a CONTROL uses --rule-strong, which clears the
+	   3:1 required by WCAG 1.4.11 against both --bg and --surface. */
+	--rule-strong: #8a8578;
+
+	/* Opaque light plate behind raster logos, which have white mattes baked in.
+	   Deliberately the same value in both themes — it is a lightbox, not a
+	   surface, so it must NOT follow the theme. */
+	--plate: #f3f1ec;
+
+	/* Modal scrim. Dark mode needs a heavier one to separate an already-dark
+	   dialog from an already-dark page. */
+	--scrim: rgb(0 0 0 / 0.55);
+
+	/* Plane above the page, for modals. Contrast ratio compresses badly at the
+	   dark end, so dark mode lifts this well clear of --surface by eye rather
+	   than chasing a number. */
+	--surface-raised: #f3f1ec;
+
+	--font-serif: "Source Serif 4", "Serif Fallback", Charter, Georgia, serif;
+	--font-sans: Inter, "Sans Fallback", system-ui, -apple-system, sans-serif;
+	--font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+	/* Fluid type — 1.25 scale, anchored at 19px body */
+	--fs-hero: clamp(2.5rem, 1.6rem + 3.6vw, 3.75rem);
+	--fs-h2: clamp(1.5rem, 1.28rem + 0.9vw, 1.875rem);
+	--fs-h3: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+	--fs-body: clamp(1.0625rem, 1.02rem + 0.18vw, 1.1875rem);
+	--fs-sm: 0.9375rem;
+	--fs-xs: 0.8125rem;
+
+	--space-section: clamp(3rem, 7vw, 5.5rem);
+	--shell: 68rem;
+	--measure: 40rem;
+	--radius: 4px;
+	--rule-w: 1px;
+	--ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #12110f;
+		--surface: #1b1a17;
+		--text: #edeae2;
+		--muted: #9e988c;
+		--rule: #2e2c27;
+		--accent: #8fb8e8;
+		--accent-soft: #18222e;
+		--rule-strong: #726c62;
+		--scrim: rgb(0 0 0 / 0.72);
+		--surface-raised: #24221d;
+	}
+}
+
+/* Manual override wins over the media query in both directions. */
+:root[data-theme="light"] {
+	color-scheme: light;
+	--bg: #fbfaf8;
+	--surface: #f3f1ec;
+	--text: #16150f;
+	--muted: #615c52;
+	--rule: #dedacf;
+	--accent: #1d4e89;
+	--accent-soft: #e6eef8;
+	--rule-strong: #8a8578;
+	--scrim: rgb(0 0 0 / 0.55);
+	--surface-raised: #f3f1ec;
+}
+
+:root[data-theme="dark"] {
+	color-scheme: dark;
+	--bg: #12110f;
+	--surface: #1b1a17;
+	--text: #edeae2;
+	--muted: #9e988c;
+	--rule: #2e2c27;
+	--accent: #8fb8e8;
+	--accent-soft: #18222e;
+	--rule-strong: #726c62;
+	--scrim: rgb(0 0 0 / 0.72);
+	--surface-raised: #24221d;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & base
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	scroll-behavior: smooth;
+	scroll-padding-top: 5.5rem;
+}
+
+body {
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-serif);
+	font-size: var(--fs-body);
+	line-height: 1.65;
+	font-synthesis-weight: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	overflow-wrap: break-word;
+}
+
+img,
+svg,
+iframe {
+	display: block;
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+}
+
+a {
+	color: inherit;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+	text-decoration-color: color-mix(in srgb, var(--accent) 70%, transparent);
+	transition: color 0.15s var(--ease), text-decoration-color 0.15s var(--ease);
+}
+
+a:hover {
+	color: var(--accent);
+	text-decoration-color: var(--accent);
+}
+
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
+::selection {
+	background: var(--accent-soft);
+	color: var(--text);
+}
+
+/* --------------------------------------------------------------------------
+   3. Typography
+   -------------------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-serif);
+	font-weight: 600;
+	line-height: 1.2;
+	letter-spacing: -0.011em;
+	text-wrap: balance;
+}
+
+h2 {
+	font-size: var(--fs-h2);
+}
+
+h3 {
+	font-size: var(--fs-h3);
+	line-height: 1.3;
+}
+
+h4 {
+	font-size: 1.0625rem;
+}
+
+p {
+	text-wrap: pretty;
+}
+
+.prose {
+	max-width: var(--measure);
+}
+
+.prose p + p {
+	margin-top: 1em;
+}
+
+/* Small sans-serif metadata line — dates, institutions, roles */
+.meta {
+	font-family: var(--font-sans);
+	font-size: var(--fs-sm);
+	line-height: 1.55;
+	color: var(--muted);
+}
+
+/* Mono is reserved for years, DOIs, ranks and action links */
+.mono {
+	font-family: var(--font-mono);
+	font-size: var(--fs-xs);
+	font-variant-ligatures: none;
+	letter-spacing: -0.01em;
+}
+
+.lede {
+	font-size: clamp(1.1875rem, 1.06rem + 0.5vw, 1.4375rem);
+	line-height: 1.5;
+	color: var(--muted);
+	max-width: 34rem;
+	text-wrap: pretty;
+}
+
+/* --------------------------------------------------------------------------
+   4. Layout
+   -------------------------------------------------------------------------- */
+
+.shell {
+	max-width: var(--shell);
+	margin-inline: auto;
+	padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
+.section {
+	padding-block: var(--space-section);
+	border-top: var(--rule-w) solid var(--rule);
+}
+
+/* Heading with a hairline running to the right edge */
+.section-head {
+	display: flex;
+	align-items: baseline;
+	gap: 1.25rem;
+	margin-bottom: 2.25rem;
+}
+
+.section-head::after {
+	content: "";
+	flex: 1;
+	height: var(--rule-w);
+	background: var(--rule);
+}
+
+/* Introductory prose sitting between a section heading and its list */
+.section-lede {
+	margin-bottom: 3rem;
+}
+
+/* Trailing note under a publication group, e.g. a link to the source record */
+.group-note {
+	margin-top: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Skip link & header
+   -------------------------------------------------------------------------- */
+
+.skip {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	translate: -50% -150%;
+	z-index: 100;
+	background: var(--text);
+	color: var(--bg);
+	font-family: var(--font-sans);
+	font-size: var(--fs-sm);
+	padding: 0.6rem 1.1rem;
+	border-radius: 0 0 var(--radius) var(--radius);
+	text-decoration: none;
+	transition: translate 0.2s var(--ease);
+}
+
+.skip:focus-visible {
+	translate: -50% 0;
+	color: var(--bg);
+}
+
+.masthead {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	/* Opaque: at 92% the page text smeared through the wordmark at ~1.18:1,
+	   and there is no backdrop-filter to separate the planes. */
+	background: var(--bg);
+	border-bottom: var(--rule-w) solid transparent;
+	transition: border-color 0.2s var(--ease);
+}
+
+.masthead[data-stuck="true"] {
+	border-bottom-color: var(--rule);
+}
+
+.masthead .shell {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+	min-height: 3.5rem;
+}
+
+.wordmark {
+	font-family: var(--font-serif);
+	font-size: 1.0625rem;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	text-decoration: none;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+.nav {
+	flex: 1;
+	overflow-x: auto;
+	overscroll-behavior-x: contain;
+	scrollbar-width: none;
+	-webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.5rem), transparent);
+	mask-image: linear-gradient(to right, #000 calc(100% - 1.5rem), transparent);
+}
+
+.nav::-webkit-scrollbar {
+	display: none;
+}
+
+.nav ul {
+	display: flex;
+	gap: 0.25rem;
+	list-style: none;
+	/* Clears the trailing fade so the last item is never dimmed at scroll end */
+	padding: 0 1.5rem 0 0;
+	margin: 0;
+}
+
+/* Below the desktop breakpoint the wordmark + toggle leave the nav almost no
+   room (0px at 320, 69px at 390), so the nav takes its own full-bleed row. */
+@media (max-width: 47.999rem) {
+	.masthead .shell {
+		flex-wrap: wrap;
+		gap: 0 1rem;
+		min-height: 0;
+	}
+
+	.wordmark {
+		flex: 1;
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		padding-block: 0.75rem;
+	}
+
+	.nav {
+		order: 3;
+		flex-basis: 100%;
+		margin-inline: calc(-1 * clamp(1.25rem, 5vw, 3rem));
+		padding-inline: clamp(1.25rem, 5vw, 3rem);
+		border-top: var(--rule-w) solid var(--rule);
+	}
+
+	.nav a {
+		padding-block: 0.7rem;
+	}
+}
+
+.nav a {
+	display: block;
+	font-family: var(--font-sans);
+	font-size: var(--fs-sm);
+	color: var(--muted);
+	text-decoration: none;
+	white-space: nowrap;
+	padding: 1rem 0.7rem;
+	border-bottom: 2px solid transparent;
+	transition: color 0.15s var(--ease), border-color 0.15s var(--ease);
+}
+
+.nav a:hover {
+	color: var(--text);
+}
+
+.nav a:focus-visible {
+	outline-offset: -3px;
+}
+
+.nav a[aria-current="true"] {
+	color: var(--text);
+	border-bottom-color: var(--accent);
+}
+
+/* Icon button (theme toggle) — 44px touch target */
+.icon-btn {
+	display: grid;
+	place-items: center;
+	width: 2.75rem;
+	height: 2.75rem;
+	flex-shrink: 0;
+	background: none;
+	border: 0;
+	border-radius: 50%;
+	color: var(--muted);
+	cursor: pointer;
+	transition: color 0.15s var(--ease), background 0.15s var(--ease);
+}
+
+.icon-btn:hover {
+	color: var(--text);
+	background: var(--surface);
+}
+
+.icon-btn svg {
+	width: 1.125rem;
+	height: 1.125rem;
+}
+
+/* The button shows the theme it will switch TO, not the current one. */
+.icon-btn .icon-sun {
+	display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+	.icon-btn .icon-sun {
+		display: block;
+	}
+	.icon-btn .icon-moon {
+		display: none;
+	}
+}
+
+:root[data-theme="light"] .icon-btn .icon-sun {
+	display: none;
+}
+:root[data-theme="light"] .icon-btn .icon-moon {
+	display: block;
+}
+:root[data-theme="dark"] .icon-btn .icon-sun {
+	display: block;
+}
+:root[data-theme="dark"] .icon-btn .icon-moon {
+	display: none;
+}
+
+/* --------------------------------------------------------------------------
+   6. Hero
+   -------------------------------------------------------------------------- */
+
+.hero {
+	padding-block: clamp(3rem, 9vw, 6rem) var(--space-section);
+}
+
+.hero-grid {
+	display: grid;
+	gap: clamp(1.75rem, 4vw, 3.5rem);
+	grid-template-columns: 1fr;
+	align-items: start;
+}
+
+@media (min-width: 48rem) {
+	.hero-grid {
+		grid-template-columns: minmax(0, 1fr) auto;
+	}
+
+	.portrait {
+		order: 0;
+	}
+}
+
+.hero h1 {
+	font-size: var(--fs-hero);
+	letter-spacing: -0.025em;
+	line-height: 1.05;
+}
+
+.hero .role {
+	font-family: var(--font-sans);
+	font-size: var(--fs-sm);
+	color: var(--muted);
+	margin-top: 0.9rem;
+	letter-spacing: 0.01em;
+}
+
+.hero .role strong {
+	color: var(--text);
+	font-weight: 500;
+}
+
+.hero .lede {
+	margin-top: 1.5rem;
+}
+
+/* Narrower than --measure, which is sized for 19px body text: at 15px the
+   same width would run to ~79 characters. */
+.hero .prose {
+	margin-top: 1.5rem;
+	max-width: 34rem;
+	color: var(--muted);
+	font-size: var(--fs-sm);
+	line-height: 1.7;
+}
+
+/* Last in DOM order, so when the hero stacks it lands after the link row —
+   648px below the name at 767px. Pull it up unless the two-column grid is on. */
+.portrait {
+	order: -1;
+	width: clamp(7rem, 18vw, 9.5rem);
+	aspect-ratio: 1;
+	border-radius: 50%;
+	object-fit: cover;
+	border: var(--rule-w) solid var(--rule);
+	justify-self: start;
+}
+
+/* Hero link row */
+.channels {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.4rem 1.25rem;
+	margin-top: 2rem;
+	list-style: none;
+	padding: 0;
+	font-family: var(--font-sans);
+	font-size: var(--fs-sm);
+}
+
+.channels a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	padding-block: 0.35rem;
+	text-decoration: none;
+	color: var(--muted);
+}
+
+.channels a:hover {
+	color: var(--accent);
+}
+
+.channels svg {
+	width: 1rem;
+	height: 1rem;
+	flex-shrink: 0;
+}
+
+.channels .primary {
+	color: var(--text);
+	border-bottom: 1px solid var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   7. Publications
+   -------------------------------------------------------------------------- */
+
+.pub-group + .pub-group {
+	margin-top: 2.75rem;
+}
+
+/* Declared after the adjacent-sibling rule above, which it must beat. */
+.pub-group.spaced,
+.pub-group + .pub-group.spaced {
+	margin-top: 3rem;
+}
+
+.pub-group > h3 {
+	font-family: var(--font-sans);
+	font-size: var(--fs-xs);
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--muted);
+	padding-bottom: 0.6rem;
+	border-bottom: var(--rule-w) solid var(--rule);
+	margin-bottom: 1.5rem;
+}
+
+/* Scholar metrics line. Carries an explicit "as of" date in the markup —
+   these numbers only move upward, so a stale figure understates rather than
+   misleads, but the date keeps it honest. */
+.metrics {
+	color: var(--muted);
+	margin-bottom: 2.5rem;
+	padding-bottom: 1.5rem;
+	border-bottom: var(--rule-w) solid var(--rule);
+}
+
+.pubs {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	gap: 1.75rem;
+}
+
+/* Optional publication thumbnail. Add an <img class="thumb"> as the first
+   child after .year and the row becomes three columns on its own. */
+.pub:has(.thumb) {
+	grid-template-columns: 3.5rem 8rem minmax(0, 1fr);
+}
+
+.pub:has(.thumb) > *:not(.year):not(.thumb) {
+	grid-column: 3;
+}
+
+.pub .thumb {
+	grid-column: 2;
+	grid-row: 1 / span 4;
+	align-self: start;
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	border: var(--rule-w) solid var(--rule);
+	border-radius: var(--radius);
+	background: var(--surface);
+}
+
+.pub {
+	display: grid;
+	gap: 0.3rem;
+	grid-template-columns: 3.5rem minmax(0, 1fr);
+	align-items: baseline;
+}
+
+.pub .year {
+	font-family: var(--font-mono);
+	font-size: var(--fs-xs);
+	color: var(--muted);
+	grid-row: 1;
+	padding-top: 0.3em;
+}
+
+.pub > *:not(.year) {
+	grid-column: 2;
+}
+
+.pub .title {
+	font-size: 1.0625rem;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.pub .title a {
+	text-decoration: none;
+}
+
+.pub .authors {
+	font-family: var(--font-sans);
+	font-size: var(--fs-sm);
+	color: var(--muted);
+}
+
+.pub .authors .self {
+	color: var(--text);
+	font-weight: 600;
+}
+
+.pub .venue {
+	font-size: var(--fs-sm);
+	font-style: italic;
+	color: var(--muted);
+}
+
+.links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 0.5rem;
+	list-style: none;
+	padding: 0;
+}
+
+.links a {
+	display: inline-block;
+	font-family: var(--font-mono);
+	font-size: var(--fs-xs);
+	color: var(--muted);
+	text-decoration: none;
+	padding: 0.2rem 0.55rem;
+	border: var(--rule-w) solid var(--rule-strong);
+	border-radius: var(--radius);
+	transition: color 0.15s var(--ease), border-color 0.15s var(--ease),
+		background 0.15s var(--ease);
+}
+
+.links a:hover {
+	color: var(--accent);
+	border-color: var(--accent);
+	background: var(--accent-soft);
+}
+
+@media (max-width: 34rem) {
+	.pub,
+	.pub:has(.thumb) {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.pub .year {
+		grid-row: auto;
+		padding-top: 0;
+	}
+	.pub > *:not(.year),
+	.pub:has(.thumb) > *:not(.year):not(.thumb) {
+		grid-column: 1;
+	}
+	.pub .thumb {
+		grid-column: 1;
+		grid-row: auto;
+		max-width: 12rem;
+	}
+}
+
+/* --------------------------------------------------------------------------
+   8. Entry lists — experience, education, achievements, activities
+   -------------------------------------------------------------------------- */
+
+.entries {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	gap: 2.5rem;
+}
+
+.entry {
+	position: relative;
+	display: grid;
+	gap: 0.35rem 1.75rem;
+	grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 44rem) {
+	.entry {
+		grid-template-columns: 9rem minmax(0, 1fr);
+	}
+	.entry > *:not(.when):not(.logo) {
+		grid-column: 2;
+	}
+	.entry .when {
+		grid-column: 1;
+		grid-row: 1;
+		text-align: right;
+		padding-top: 0.25em;
+	}
+	/* The date owns row 1 of the left rail, so the logo takes row 2 — placing
+	   both on row 1 would stack them in the same cell. */
+	/* Taken out of flow: as a grid item its 44px height became the minimum
+	   height of a row otherwise sized by one line of .where text, pushing the
+	   rest of the entry down 19.25px versus its logo-less siblings.
+	   right:calc(100% - 9rem) pins it to the right edge of the date rail. */
+	.entry .logo {
+		position: absolute;
+		top: 2.1rem;
+		right: calc(100% - 9rem);
+		margin-bottom: 0;
+	}
+}
+
+.entry .when {
+	font-family: var(--font-mono);
+	font-size: var(--fs-xs);
+	color: var(--muted);
+	white-space: nowrap;
+}
+
+/* Items inside a labelled group (Certifications, Grants, …) are h4 so they
+   nest under the group's h3 — they still read as entry titles. */
+.entry > h3,
+.entry > h4 {
+	font-size: var(--fs-h3);
+	font-family: var(--font-serif);
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.entry .where {
+	font-family: var(--font-sans);
+	font-size: var(--fs-sm);
+	color: var(--muted);
+}
+
+/* Entry body text is capped independently of the grid column, which would
+   otherwise run to ~99 characters at the widest breakpoint. */
+.entry .where,
+.entry .sub,
+.entry > p,
+.entry ul:not(.tags):not(.links):not(.ranks) {
+	max-width: 36rem;
+}
+
+/* Descriptive paragraphs in an entry, as distinct from the .where meta line */
+.entry > p:not(.where) {
+	margin-top: 0.75rem;
+	font-size: var(--fs-sm);
+	line-height: 1.7;
+	color: var(--muted);
+}
+
+.entry > p:not(.where) + .tags {
+	margin-top: 1rem;
+}
+
+/* The group heading already draws the top edge of the list */
+.pub-group > .projects .project:first-child {
+	border-top: 0;
+}
+
+.entry ul:not(.tags):not(.links):not(.ranks) {
+	margin-top: 0.75rem;
+	padding-left: 1.05rem;
+	font-size: var(--fs-sm);
+	line-height: 1.7;
+	color: var(--muted);
+	display: grid;
+	gap: 0.35rem;
+}
+
+.entry ul:not(.tags):not(.links):not(.ranks) li::marker {
+	color: var(--muted);
+}
+
+.entry .sub {
+	margin-top: 1.25rem;
+	padding-left: 1.1rem;
+	border-left: var(--rule-w) solid var(--rule);
+	display: grid;
+	gap: 1.25rem;
+}
+
+.entry .sub h4 {
+	font-family: var(--font-sans);
+	font-size: var(--fs-sm);
+	font-weight: 600;
+}
+
+/* Education entries carry an institution logo */
+.entry .logo {
+	width: auto;
+	height: 2.75rem;
+	max-width: 6rem;
+	object-fit: contain;
+	border-radius: var(--radius);
+	background: var(--plate);
+	padding: 0.3rem;
+}
+
+/* Stacked layout: the logo leads the entry instead of sitting in a rail. */
+@media (max-width: 43.999rem) {
+	.entry .logo {
+		justify-self: start;
+		margin-bottom: 0.4rem;
+	}
+}
+
+/* Rank chips (MoraXtreme / IEEEXtreme) */
+.ranks {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-top: 0.9rem;
+	list-style: none;
+	padding: 0;
+}
+
+.ranks li {
+	font-family: var(--font-mono);
+	font-size: var(--fs-xs);
+	color: var(--muted);
+	border: var(--rule-w) solid var(--rule-strong);
+	border-radius: var(--radius);
+	padding: 0.3rem 0.6rem;
+}
+
+.ranks strong {
+	color: var(--text);
+	font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   9. Skills & tags
+   -------------------------------------------------------------------------- */
+
+.skill-groups {
+	display: grid;
+	gap: 2rem clamp(1.5rem, 4vw, 3rem);
+	grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+}
+
+.skill-groups h3 {
+	font-family: var(--font-sans);
+	font-size: var(--fs-xs);
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--muted);
+	margin-bottom: 0.85rem;
+}
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.tags li {
+	font-family: var(--font-mono);
+	font-size: var(--fs-xs);
+	line-height: 1.4;
+	color: var(--muted);
+	background: var(--surface);
+	border: var(--rule-w) solid transparent;
+	border-radius: var(--radius);
+	padding: 0.25rem 0.55rem;
+}
+
+/* --------------------------------------------------------------------------
+   10. Projects
+   -------------------------------------------------------------------------- */
+
+.projects {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	gap: 0;
+}
+
+.project {
+	display: grid;
+	grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+	gap: 0.3rem 1.25rem;
+	align-items: center;
+	padding-block: 1.35rem;
+	border-bottom: var(--rule-w) solid var(--rule);
+}
+
+.project:first-child {
+	border-top: var(--rule-w) solid var(--rule);
+}
+
+.project img {
+	width: 3.5rem;
+	height: 3.5rem;
+	object-fit: contain;
+	border-radius: var(--radius);
+	background: var(--plate);
+	padding: 0.35rem;
+	grid-row: 1;
+}
+
+.project .body {
+	grid-column: 2;
+	min-width: 0;
+}
+
+.project h4 {
+	font-size: 1.0625rem;
+	font-weight: 600;
+	line-height: 1.35;
+}
+
+.project .meta {
+	margin-top: 0.15rem;
+}
+
+.project .tags {
+	margin-top: 0.5rem;
+}
+
+.project .open {
+	grid-column: 3;
+	grid-row: 1;
+	font-family: var(--font-mono);
+	font-size: var(--fs-xs);
+	color: var(--muted);
+	background: none;
+	border: var(--rule-w) solid var(--rule-strong);
+	border-radius: var(--radius);
+	padding: 0.45rem 0.75rem;
+	min-height: 2.25rem;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: color 0.15s var(--ease), border-color 0.15s var(--ease),
+		background 0.15s var(--ease);
+}
+
+.project .open:hover {
+	color: var(--accent);
+	border-color: var(--accent);
+	background: var(--accent-soft);
+}
+
+@media (max-width: 34rem) {
+	.project {
+		grid-template-columns: 2.75rem minmax(0, 1fr);
+	}
+	.project img {
+		width: 2.75rem;
+		height: 2.75rem;
+		grid-row: 1;
+		align-self: start;
+	}
+	.project .open {
+		grid-column: 2;
+		grid-row: auto;
+		justify-self: start;
+		margin-top: 0.75rem;
+	}
+}
+
+/* --------------------------------------------------------------------------
+   11. Dialogs (project detail)
+   -------------------------------------------------------------------------- */
+
+dialog.detail {
+	width: min(42rem, calc(100vw - 2rem));
+	max-height: min(85vh, 52rem);
+	padding: 0;
+	border: var(--rule-w) solid var(--rule);
+	border-radius: 8px;
+	/* A raised plane, not --bg: reusing the page plane left the dark dialog at
+	   1.06:1 against its own backdrop. */
+	background: var(--surface-raised);
+	color: var(--text);
+	overflow: hidden;
+	/* Belt and braces: some engines still inherit the UA centering quirk */
+	margin: auto;
+}
+
+/* The dialog is a container, not a control — the autofocused close button
+   carries the visible focus ring instead. */
+dialog.detail:focus,
+dialog.detail:focus-visible {
+	outline: none;
+}
+
+:root:has(dialog.detail[open]) {
+	overflow: hidden;
+}
+
+dialog.detail::backdrop {
+	background: var(--scrim);
+	backdrop-filter: none;
+}
+
+dialog.detail .dialog-inner {
+	max-height: 100%;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.dialog-head {
+	/* Sticky so the close button cannot scroll out of reach: at 740x360 it
+	   ended up 531px above the dialog top. */
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background: var(--surface-raised);
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	gap: 0.75rem 1rem;
+	align-items: start;
+	padding-bottom: 1.25rem;
+	margin-bottom: 1.5rem;
+	border-bottom: var(--rule-w) solid var(--rule);
+}
+
+.dialog-head h2 {
+	font-size: clamp(1.375rem, 1.2rem + 0.7vw, 1.625rem);
+	line-height: 1.25;
+}
+
+.dialog-head .meta {
+	margin-top: 0.4rem;
+}
+
+.dialog-head .tags {
+	margin-top: 0.75rem;
+	grid-column: 1 / -1;
+}
+
+.dialog-close {
+	width: 2.75rem;
+	height: 2.75rem;
+	margin: -0.5rem -0.5rem 0 0;
+	display: grid;
+	place-items: center;
+	background: none;
+	border: 0;
+	border-radius: 50%;
+	color: var(--muted);
+	cursor: pointer;
+	transition: color 0.15s var(--ease), background 0.15s var(--ease);
+}
+
+.dialog-close:hover {
+	color: var(--text);
+	background: var(--surface);
+}
+
+.dialog-close svg {
+	width: 1.125rem;
+	height: 1.125rem;
+}
+
+dialog .prose {
+	font-size: var(--fs-sm);
+	line-height: 1.7;
+	color: var(--muted);
+}
+
+dialog .prose > * + * {
+	margin-top: 1rem;
+}
+
+dialog .prose h3 {
+	font-family: var(--font-sans);
+	font-size: var(--fs-xs);
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--muted);
+	margin-top: 1.75rem;
+}
+
+dialog .prose ul:not(.tags):not(.links) {
+	padding-left: 1.05rem;
+	display: grid;
+	gap: 0.4rem;
+}
+
+dialog .prose ul:not(.tags):not(.links) li::marker {
+	color: var(--muted);
+}
+
+.embed {
+	aspect-ratio: 16 / 9;
+	width: 100%;
+	border-radius: var(--radius);
+	overflow: hidden;
+	background: var(--surface);
+	border: var(--rule-w) solid var(--rule);
+}
+
+.embed iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+dialog .shot {
+	width: 100%;
+	border-radius: var(--radius);
+	border: var(--rule-w) solid var(--rule);
+}
+
+/* --------------------------------------------------------------------------
+   12. Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+	border-top: var(--rule-w) solid var(--rule);
+	padding-block: 2.5rem 3.5rem;
+	font-family: var(--font-sans);
+	font-size: var(--fs-sm);
+	color: var(--muted);
+}
+
+.site-footer .shell {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem 2rem;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.site-footer .links a {
+	border: 0;
+	padding: 0.3rem 0;
+}
+
+.site-footer .links a:hover {
+	background: none;
+}
+
+/* --------------------------------------------------------------------------
+   13. Motion & print
+   -------------------------------------------------------------------------- */
+
+/* No scroll-triggered reveals: content is never hidden behind a script. */
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+@media print {
+	/* The dark palette is localStorage-persisted and would otherwise survive
+	   into print: dialog headings measured 2.92:1 on paper. */
+	:root,
+	:root[data-theme="dark"],
+	:root[data-theme="light"] {
+		color-scheme: light;
+		--bg: #fff;
+		--surface: #fff;
+		--text: #000;
+		--muted: #333;
+		--rule: #bbb;
+		--rule-strong: #888;
+		--accent: #000;
+		--accent-soft: #fff;
+		--plate: #fff;
+		--surface-raised: #fff;
+	}
+
+	.masthead,
+	.skip,
+	.icon-btn,
+	.project .open,
+	.dialog-close,
+	.embed {
+		display: none !important;
+	}
+
+	body {
+		font-size: 11pt;
+	}
+
+	.section {
+		padding-block: 1.25rem;
+	}
+
+	/* Keep individual records together; whole sections are taller than a page,
+	   so avoiding breaks inside them cannot be honoured. */
+	.entry,
+	.pub,
+	.project,
+	.pub-group > h3 {
+		break-inside: avoid;
+	}
+
+	.pub-group > h3,
+	.section-head {
+		break-after: avoid;
+	}
+
+	/* Project details live in <dialog>, which the UA hides when closed. Render
+	   them as an appendix rather than dropping the content from the printout. */
+	dialog.detail {
+		display: block;
+		position: static;
+		width: auto;
+		max-height: none;
+		border: 0;
+		border-top: var(--rule-w) solid var(--rule);
+	}
+
+	/* Keep the title with at least the opening of its description, but let the
+	   appendix flow — reserving a page per project wastes eight sheets. */
+	.dialog-head {
+		break-after: avoid;
+	}
+
+	dialog.detail .dialog-inner {
+		max-height: none;
+		overflow: visible;
+		padding: 0.75rem 0;
+	}
+
+	dialog.detail::backdrop {
+		display: none;
+	}
+}
