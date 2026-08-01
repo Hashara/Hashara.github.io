@@ -283,6 +283,11 @@ p {
 	margin-top: 3rem;
 }
 
+/* Trailing note under a publication group, e.g. a link to the source record */
+.group-note {
+	margin-top: 1.25rem;
+}
+
 /* --------------------------------------------------------------------------
    5. Skip link & header
    -------------------------------------------------------------------------- */
