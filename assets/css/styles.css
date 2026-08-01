@@ -557,11 +557,43 @@ p {
 	margin-bottom: 1.5rem;
 }
 
+/* Scholar metrics line. Carries an explicit "as of" date in the markup —
+   these numbers only move upward, so a stale figure understates rather than
+   misleads, but the date keeps it honest. */
+.metrics {
+	color: var(--muted);
+	margin-bottom: 2.5rem;
+	padding-bottom: 1.5rem;
+	border-bottom: var(--rule-w) solid var(--rule);
+}
+
 .pubs {
 	list-style: none;
 	padding: 0;
 	display: grid;
 	gap: 1.75rem;
+}
+
+/* Optional publication thumbnail. Add an <img class="thumb"> as the first
+   child after .year and the row becomes three columns on its own. */
+.pub:has(.thumb) {
+	grid-template-columns: 3.5rem 8rem minmax(0, 1fr);
+}
+
+.pub:has(.thumb) > *:not(.year):not(.thumb) {
+	grid-column: 3;
+}
+
+.pub .thumb {
+	grid-column: 2;
+	grid-row: 1 / span 4;
+	align-self: start;
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	border: var(--rule-w) solid var(--rule);
+	border-radius: var(--radius);
+	background: var(--surface);
 }
 
 .pub {
@@ -638,16 +670,23 @@ p {
 	background: var(--accent-soft);
 }
 
-@media (max-width: 30rem) {
-	.pub {
+@media (max-width: 34rem) {
+	.pub,
+	.pub:has(.thumb) {
 		grid-template-columns: minmax(0, 1fr);
 	}
 	.pub .year {
 		grid-row: auto;
 		padding-top: 0;
 	}
-	.pub > *:not(.year) {
+	.pub > *:not(.year),
+	.pub:has(.thumb) > *:not(.year):not(.thumb) {
 		grid-column: 1;
+	}
+	.pub .thumb {
+		grid-column: 1;
+		grid-row: auto;
+		max-width: 12rem;
 	}
 }
 
@@ -718,8 +757,26 @@ p {
    otherwise run to ~99 characters at the widest breakpoint. */
 .entry .where,
 .entry .sub,
+.entry > p,
 .entry ul:not(.tags):not(.links):not(.ranks) {
 	max-width: 36rem;
+}
+
+/* Descriptive paragraphs in an entry, as distinct from the .where meta line */
+.entry > p:not(.where) {
+	margin-top: 0.75rem;
+	font-size: var(--fs-sm);
+	line-height: 1.7;
+	color: var(--muted);
+}
+
+.entry > p:not(.where) + .tags {
+	margin-top: 1rem;
+}
+
+/* The group heading already draws the top edge of the list */
+.pub-group > .projects .project:first-child {
+	border-top: 0;
 }
 
 .entry ul:not(.tags):not(.links):not(.ranks) {
